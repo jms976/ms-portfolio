@@ -3,9 +3,12 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://jms976.github.io/ms-potfolio",
   "scripts": {
     "start": "vite",
     "build": "tsc -b && vite build",
+    "predeploy": "pnpm build",
+    "deploy": "gh-pages -d build",
     "lint": "eslint . --ext ts,tsx,js,jsx --report-unused-disable-directives --max-warnings 0",
     "format": "prettier --check \"**/*.{js,jsx,ts,tsx,css}\"",
     "preview": "vite preview"
@@ -28,6 +31,7 @@
     "eslint-plugin-prettier": "^5.1.3",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
+    "gh-pages": "^6.1.1",
     "prettier": "^3.3.2",
     "sass": "^1.77.6",
     "typescript": "^5.2.2",
