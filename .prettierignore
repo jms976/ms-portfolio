@@ -1,0 +1,7 @@
+dist/
+build/
+
+# static files
+public/
+
+pnpm-lock.yaml

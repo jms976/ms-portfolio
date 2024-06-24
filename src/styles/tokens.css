@@ -1,0 +1,125 @@
+/**
+  FIXME deprecate legacy 
+  해당 내용은 IDE / TOOL HINT 를 위해서만 작성하고 있습니다.
+  실제 해당 css 삽입은 tokens.ts 를 통해 진행되며, 내용 변경을 하시려면 두 파일의 싱크가 필요합니다.    
+ */
+
+:root {
+  /* Color Palette */
+  --color-gray-9: #0a0a0a;
+  --color-gray-8: #1f1f1f;
+  --color-gray-7: #303030;
+  --color-gray-6: #6a6a6a;
+  --color-gray-5: #aaaaaa;
+  --color-gray-4: #d4d4d4;
+  --color-gray-3: #ebebeb;
+  --color-gray-2: #f3f3f3;
+  --color-gray-1: #f7f7f7;
+  --color-gray-0: #ffffff;
+  --color-primary-9: #ff5000;
+  --color-primary-8: #993000;
+  --color-primary-7: #cc4000;
+  --color-primary-6: #ffdccc;
+  --color-primary-5: #ffede5;
+  --color-dust-red-9: #ff4d4f;
+  --color-dust-red-8: #820014;
+  --color-dust-red-7: #a8071a;
+  --color-dust-red-6: #ffa39e;
+  --color-dust-red-5: #fff1f0;
+  --color-sunset-orange-9: #fa8c16;
+  --color-sunset-orange-8: #873800;
+  --color-sunset-orange-7: #ad4e00;
+  --color-sunset-orange-6: #ffd591;
+  --color-sunset-orange-5: #fff7e6;
+  --color-calendula-gold-9: #faad14;
+  --color-calendula-gold-8: #874d00;
+  --color-calendula-gold-7: #ad6800;
+  --color-calendula-gold-6: #ffe58f;
+  --color-calendula-gold-5: #fffbe6;
+  --color-sunrise-yellow-9: #fadb14;
+  --color-sunrise-yellow-8: #876800;
+  --color-sunrise-yellow-7: #ad8b00;
+  --color-sunrise-yellow-6: #fffb8f;
+  --color-sunrise-yellow-5: #feffe6;
+  --color-lime-9: #a0d911;
+  --color-lime-8: #3f6600;
+  --color-lime-7: #5b8c00;
+  --color-lime-6: #eaff8f;
+  --color-lime-5: #fcffe6;
+  --color-polar-green-9: #52c41a;
+  --color-polar-green-8: #135200;
+  --color-polar-green-7: #237804;
+  --color-polar-green-6: #b7eb8f;
+  --color-polar-green-5: #f6ffed;
+  --color-cyan-9: #13c2c2;
+  --color-cyan-8: #00474f;
+  --color-cyan-7: #006d75;
+  --color-cyan-6: #87e8de;
+  --color-cyan-5: #e6fffb;
+  --color-blue-9: #1890ff;
+  --color-blue-8: #003a8c;
+  --color-blue-7: #0050b3;
+  --color-blue-6: #91d5ff;
+  --color-blue-5: #e6f7ff;
+  --color-geek-blue-9: #2f54eb;
+  --color-geek-blue-8: #061178;
+  --color-geek-blue-7: #10239e;
+  --color-geek-blue-6: #adc6ff;
+  --color-geek-blue-5: #f0f5ff;
+  --color-golden-purple-9: #722ed1;
+  --color-golden-purple-8: #22075e;
+  --color-golden-purple-7: #391085;
+  --color-golden-purple-6: #d3adf7;
+  --color-golden-purple-5: #f9f0ff;
+  --color-magenta-9: #eb2f96;
+  --color-magenta-8: #780650;
+  --color-magenta-7: #9e1068;
+  --color-magenta-6: #ffadd2;
+  --color-magenta-5: #fff0f6;
+  --color-status-critical: #d32029;
+  --color-status-caution: #f9a800;
+  --color-status-normal: #237f52;
+  --color-status-inactive: var(--color-gray-6);
+  --color-border-1: #3d3d3d;
+  --color-error: var(--color-dust-red-7);
+
+  /* Size */
+  --size-none: 0;
+  --size-xxsm: 2px;
+  --size-xsm: 4px;
+  --size-sm: 8px;
+  --size-md: 12px;
+  --size-lg: 16px;
+  --size-xlg: 20px;
+  --size-xxlg: 24px;
+  --size-extra: 40px;
+
+  /* Font */
+  --font-size-graph: 10px;
+  --font-size-extra: 48px;
+  --font-size-title: 30px;
+  --font-size-subTitle: 24px;
+  --font-size-h1: 18px;
+  --font-size-h2: 16px;
+  --font-size-h3: 14px;
+  --font-size-h4: 12px;
+
+  --font-weight-regular: 400;
+  --font-weight-bold: 500;
+  --font-weight-extra-bold: 700;
+
+  --font-align-left: left;
+  --font-align-center: center;
+  --font-align-right: right;
+
+  --line-height-sub-title: 32px;
+  --line-height-h1: 26px;
+  --line-height-h2: 24px;
+  --line-height-h3: 22px;
+  --line-height-h4: 20px;
+  --line-height-graph: 18px;
+
+  /** screen */
+  --screen-min-size: 1440px;
+  --screen-max-size: 1920px;
+}

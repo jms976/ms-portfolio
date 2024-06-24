@@ -1,0 +1,37 @@
+@font-face {
+  font-family: 'NanumSquare';
+  font-weight: 400;
+  src:
+    local('NanumSquare'),
+    url(nanum-square/NanumSquareR.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'NanumSquare';
+  font-weight: 700;
+  src:
+    local('NanumSquare'),
+    url(nanum-square/NanumSquareB.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'NanumSquare';
+  font-weight: 800;
+  src:
+    local('NanumSquare'),
+    url(nanum-square/NanumSquareEB.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'NanumSquare';
+  font-weight: 300;
+  src:
+    local('NanumSquare'),
+    url(nanum-square/NanumSquareL.woff) format('woff');
+}
+
+body,
+input,
+textarea {
+  font-family: 'NanumSquare', system-ui;
+}
