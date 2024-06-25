@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom';
 
 import { routes } from '../../router/routerMap';
-import Hamburger from './Hamburger';
+import styles from './Navigator.module.css';
+// import Hamburger from './Hamburger';
 
 const Navigation = () => {
   return (
-    <header id="header">
-      <h1 className="index-link">
+    <header className={styles.header}>
+      <h1 className={styles.headerTitle}>
         {routes
           .filter((l) => l.index)
           .map((l) => (
@@ -15,7 +16,7 @@ const Navigation = () => {
             </Link>
           ))}
       </h1>
-      <nav className="links">
+      <nav className={styles.headerLink}>
         <ul>
           {routes
             .filter((l) => !l.index && !l.hideNav)
@@ -26,7 +27,7 @@ const Navigation = () => {
             ))}
         </ul>
       </nav>
-      <Hamburger />
+      {/* <Hamburger /> */}
     </header>
   );
 };

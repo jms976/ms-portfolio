@@ -1,6 +1,8 @@
 import { ReactNode } from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
+
 import { Navigation } from '../Navigation';
+import styles from './RootLayout.module.css';
 
 type RootLayoutProps = {
   children?: ReactNode;
@@ -14,9 +16,10 @@ const RootLayout = (props: RootLayoutProps) => {
       <Helmet titleTemplate="%s | 명수 Frontened Developer" defaultTitle="명수 포폴" defer={false}>
         {title && <title>{title}</title>}
       </Helmet>
-      <div id="wrapper">
+
+      <div className={styles.wrapper}>
         <Navigation />
-        <div id="main">{children}</div>
+        <div className={styles.main}>{children}</div>
         {/* {props.fullPage ? null : <SideBar />} */}
       </div>
     </HelmetProvider>

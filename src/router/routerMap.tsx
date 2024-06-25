@@ -10,7 +10,7 @@ export type RouteConfig = Omit<RouteObject, 'children'> & {
 
 export const routes = [
   {
-    id: 'MS Page',
+    id: 'MS Potfolio',
     index: true,
     element: <Navigate to="/index" replace />,
   },

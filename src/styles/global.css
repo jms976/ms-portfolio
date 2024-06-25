@@ -3,6 +3,8 @@
 }
 
 body {
+  font-family: 'NotoSans', 'NanumSquare', 'NotoSerif', san-serif, serif;
+  background-color: var(--color-gray-2);
 }
 
 :global(#app) {
