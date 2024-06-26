@@ -3,7 +3,6 @@ import { Link, LinkProps, useLocation } from 'react-router-dom';
 
 import {
   AppBar,
-  CssBaseline,
   Toolbar,
   IconButton,
   Typography,
@@ -21,11 +20,14 @@ import { routes } from '../../router/routerMap';
 import styles from './Navigation.module.css';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const LinkBehavior = forwardRef<any, LinkProps>((props, ref) => <Link ref={ref} {...props} role={undefined} />);
+const LinkBehavior = forwardRef<any, Omit<LinkProps, 'to'>>((props, ref) => (
+  <Link ref={ref} to="/" {...props} role={undefined} />
+));
 
 const Navigation = () => {
   const [Title] = routes;
-  const routeList = (isIndex?: boolean) => routes.filter(({ index, hideNav }) => !index && !(isIndex && hideNav));
+  const routeList = ({ isIndex }: { isIndex?: boolean }) =>
+    routes.filter(({ index, hideNav }) => !index && !(isIndex && hideNav));
 
   const { pathname } = useLocation();
   const [currentPathname, setCurrentPathname] = useState(pathname.split('/').at(1));
@@ -44,27 +46,33 @@ const Navigation = () => {
 
   return (
     <>
-      <CssBaseline />
       <AppBar component="nav" color="inherit">
         <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: { xs: 1, sm: 0 } }} className={styles.headerTitle}>
-            <Button component={LinkBehavior} to={Title.path ?? '/'} variant="text" color="inherit">
+          <Typography variant="h6" component="div" className={styles.headerTitle}>
+            <Button component={LinkBehavior} {...(Title.path && { to: Title.path })} variant="text" color="inherit">
               {Title.id}
             </Button>
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }} className={styles.headerLink}>
-            {routeList(true).map(({ id, path }) => (
+            {routeList({ isIndex: true }).map(({ id, path }) => (
               <Button
                 component={LinkBehavior}
-                to={path ?? '/'}
+                disabled={!path}
                 key={id}
                 className={`${currentPathname === id && styles.active}`}
                 variant="text"
                 color="inherit"
+                {...(path && { to: path })}
               >
                 {id}
               </Button>
             ))}
+          </Box>
+          <Box
+            className={`${styles.headerLink} ${styles.smallSize}`}
+            sx={{ display: { xs: 'block', sm: 'none' }, flexGrow: { xs: 1, sm: 0 } }}
+          >
+            <span>{currentPathname}</span>
           </Box>
           <IconButton
             color="inherit"
@@ -100,9 +108,15 @@ const Navigation = () => {
           </Toolbar>
           <Divider />
           <List className={styles.navList}>
-            {routeList().map(({ id, path }) => (
+            {routeList({}).map(({ id, path }) => (
               <ListItem key={id} disablePadding>
-                <ListItemButton component={LinkBehavior} to={path ?? '/'} key={id} onClick={handleDrawerToggle}>
+                <ListItemButton
+                  component={LinkBehavior}
+                  disabled={!path}
+                  key={id}
+                  onClick={handleDrawerToggle}
+                  {...(path && { to: path })}
+                >
                   <span className={styles.navListText}>{id}</span>
                 </ListItemButton>
               </ListItem>

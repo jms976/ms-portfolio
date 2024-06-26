@@ -1,7 +1,7 @@
 import { ReactElement, Suspense } from 'react';
 import { RouteObject, Navigate, Outlet } from 'react-router-dom';
 import { RootLayout } from '../layout/RootLayout';
-import { Index } from '../pages/Index';
+import { About } from '../pages/About';
 
 export type RouteConfig = Omit<RouteObject, 'children'> & {
   children?: RouteConfig[];
@@ -18,47 +18,27 @@ export const routes: RouteConfig[] = [
   {
     id: 'about',
     path: '/about',
-    element: (
-      <RootLayout title="about">
-        <Index />
-      </RootLayout>
-    ),
+    element: <About />,
   },
   {
     id: 'resume',
     path: '/resume',
-    element: (
-      <RootLayout>
-        <>resume</>
-      </RootLayout>
-    ),
+    element: <>resume</>,
   },
   {
     id: 'project',
     path: '/project',
-    element: (
-      <RootLayout>
-        <>project</>
-      </RootLayout>
-    ),
+    element: <>project</>,
   },
   {
     id: 'skills',
     path: '/skills',
-    element: (
-      <RootLayout>
-        <>skills</>
-      </RootLayout>
-    ),
+    element: <>skills</>,
   },
   {
     id: 'contact',
     path: '/contact',
-    element: (
-      <RootLayout>
-        <>contact</>
-      </RootLayout>
-    ),
+    element: <>contact</>,
   },
 ];
 
@@ -68,7 +48,9 @@ export const routeMap: RouteConfig[] = [
     path: '/',
     element: (
       <Suspense fallback>
-        <Outlet />
+        <RootLayout>
+          <Outlet />
+        </RootLayout>
       </Suspense>
     ),
     children: [
