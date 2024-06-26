@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <Box
       className={`${styles.root} ${isTop && styles.topRoot}`}
-      sx={{ display: 'flex', flexDirection: { xs: 'row', md: 'column' } }}
+      sx={{ display: 'flex', flexDirection: { xs: 'row', md: 'column' }, gap: { xs: '.5em', md: '2em' } }}
     >
       <Box className={styles.avatarWrapper} sx={{ gap: { xs: '.5em', md: '1em' } }}>
         <Avatar
