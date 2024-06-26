@@ -15,8 +15,8 @@ import {
   ListItem,
   ListItemButton,
 } from '@mui/material';
-// import MenuIcon from '@mui/icons-material/menu';
-// import Close from '@mui/icons-material/Close';
+import MenuIcon from '@mui/icons-material/menu';
+import Close from '@mui/icons-material/Close';
 
 import { routes } from '../../router/routerMap';
 import styles from './Navigation.module.css';
@@ -74,7 +74,7 @@ const Navigation = () => {
             onClick={handleDrawerToggle}
             sx={{ display: { sm: 'none' } }}
           >
-            {/* <MenuIcon /> */}
+            <MenuIcon />
           </IconButton>
         </Toolbar>
       </AppBar>
@@ -95,7 +95,9 @@ const Navigation = () => {
           }}
         >
           <Toolbar sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-            <IconButton onClick={handleDrawerToggle}>{/* <Close /> */}</IconButton>
+            <IconButton onClick={handleDrawerToggle}>
+              <Close />
+            </IconButton>
           </Toolbar>
           <Divider />
           <List className={styles.navList}>
