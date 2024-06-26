@@ -50,14 +50,14 @@ const Header = () => {
           </Typography>
         )}
         <Button
-          component="a"
+          LinkComponent={'a'}
           href="mailto:myungujang@gmail.com"
           tabIndex={-1}
           size="small"
           color="inherit"
           startIcon={<MailOutline />}
         >
-          myungsujang89@gmail.com
+          <span style={{ fontSize: '10px' }}>myungsujang89@gmail.com</span>
         </Button>
         {!isTop && (
           <>
