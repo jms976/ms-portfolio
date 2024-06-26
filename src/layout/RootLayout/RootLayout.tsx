@@ -23,7 +23,11 @@ const RootLayout = (props: RootLayoutProps) => {
       <Box component="div" className={styles.wrapper}>
         <Navigation />
         <Toolbar />
-        <Box component="main" sx={{ p: 3, display: { xs: 'block', md: 'flex' } }}>
+        <Box
+          component="main"
+          className={styles.mainWrapper}
+          sx={{ p: 3, display: { xs: 'block', md: 'flex' }, gap: { md: '40px' } }}
+        >
           <Box component="section">
             <Header />
           </Box>

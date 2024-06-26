@@ -1,4 +1,4 @@
-import { Box, Avatar, Typography, useMediaQuery, useTheme, Button, Divider, Chip } from '@mui/material';
+import { Box, Avatar, Typography, useMediaQuery, useTheme, Button, Divider } from '@mui/material';
 import { MailOutline } from '@mui/icons-material';
 
 import { tokens } from '../../styles/tokens';
@@ -13,35 +13,42 @@ const Header = () => {
       className={`${styles.root} ${isTop && styles.topRoot}`}
       sx={{ display: 'flex', flexDirection: { xs: 'row', md: 'column' } }}
     >
-      <Box className={styles.avatarWrapper}>
-        <Avatar sx={{ width: '80px', height: '80px', bgcolor: tokens.color.polarGreen7 }}>MS</Avatar>
+      <Box className={styles.avatarWrapper} sx={{ gap: { xs: '.5em', md: '1em' } }}>
+        <Avatar
+          sx={{
+            width: { xs: '80px', md: '120px' },
+            height: { xs: '80px', md: '120px' },
+            bgcolor: tokens.color.polarGreen7,
+          }}
+        >
+          MS
+        </Avatar>
         <Typography className={styles.customBedge}>FE Develper</Typography>
       </Box>
       <Box>
         <Typography variant="h6">
-          반갑습니다 ( ͡•. •͡)
+          반갑습니다 :)
           <br />
           FE 개발자 장명수 입니다
         </Typography>
         {!isTop && (
           <>
-            <Typography sx={{ margin: '10px 0' }}>
-              이 포트폴리오 사이트는 <br />
-              React | MUI | VITE | 등으로 <br />
-              사용하여 제작 되었습니다.
+            <Divider sx={{ margin: '2em 1em 2em 0' }} />
+            <Typography className={styles.subTitle} variant="h6">
+              ABOUT
             </Typography>
-            <Typography sx={{ margin: '10px 0' }}>
-              저를 더 많이 알고 싶으시거나
-              <br />
-              커피챗 요청이 있다면,
-              <br />
-              아래 메일로 연락 주세요.
+            <Typography variant="body2" sx={{ margin: '10px 0' }}>
+              이 포트폴리오 사이트는 React | MUI | VITE ... 등으로 사용하여 제작 되었습니다. 저를 더 많이 알고 싶으시면
+              아래 메일로 연락 주세요. 서울 마포 근처라면 항시 커피챗 가능합니다.
             </Typography>
           </>
         )}
-        <Divider sx={{ margin: '10px 20px' }}>
-          <Chip label="mail" size="small" />
-        </Divider>
+        <Divider sx={{ margin: { xs: '10px 0', md: '2em 1em 2em 0' } }} />
+        {!isTop && (
+          <Typography className={styles.subTitle} variant="h6">
+            CONTACT
+          </Typography>
+        )}
         <Button
           component="a"
           href="mailto:myungujang@gmail.com"
@@ -54,8 +61,12 @@ const Header = () => {
         </Button>
         {!isTop && (
           <>
-            <Typography sx={{ margin: '10px 0' }}>제품에 진심이고 함께 발전하고 싶습니다</Typography>
-            <Typography sx={{ margin: '10px 0' }}>방문해 주셔서 감사합니다 :)</Typography>
+            <Typography variant="body2" sx={{ margin: '10px 0' }}>
+              제품에 진심이고 함께 발전하고 싶습니다
+            </Typography>
+            <Typography variant="body2" sx={{ margin: '10px 0' }}>
+              방문해 주셔서 감사합니다 :)
+            </Typography>
           </>
         )}
       </Box>
