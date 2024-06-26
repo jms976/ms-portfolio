@@ -125,7 +125,7 @@ export const tokens = {
   },
 
   screen: {
-    minSize: '1440px',
+    minSize: '300px',
     maxSize: '1920px',
   },
 };

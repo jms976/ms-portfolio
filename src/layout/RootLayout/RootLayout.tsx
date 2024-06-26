@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { Box, Toolbar } from '@mui/material';
 
 import { Navigation } from '../Navigation';
 import styles from './RootLayout.module.css';
@@ -19,7 +20,10 @@ const RootLayout = (props: RootLayoutProps) => {
 
       <div className={styles.wrapper}>
         <Navigation />
-        <div className={styles.main}>{children}</div>
+        <Box component="main" sx={{ p: 3 }}>
+          <Toolbar />
+          <div className={styles.main}>{children}</div>
+        </Box>
         {/* {props.fullPage ? null : <SideBar />} */}
       </div>
     </HelmetProvider>

@@ -6,30 +6,30 @@ import { Index } from '../pages/Index';
 export type RouteConfig = Omit<RouteObject, 'children'> & {
   children?: RouteConfig[];
   icon?: ReactElement;
+  hideNav?: boolean;
 };
 
-export const routes = [
+export const routes: RouteConfig[] = [
   {
     id: 'MS Potfolio',
     index: true,
-    element: <Navigate to="/index" replace />,
-  },
-  {
-    id: 'index',
-    path: '/index',
-    hideNav: true,
-    element: (
-      <RootLayout title="index">
-        <Index />
-      </RootLayout>
-    ),
+    element: <Navigate to="/about" replace />,
   },
   {
     id: 'about',
     path: '/about',
     element: (
+      <RootLayout title="about">
+        <Index />
+      </RootLayout>
+    ),
+  },
+  {
+    id: 'resume',
+    path: '/resume',
+    element: (
       <RootLayout>
-        <>about</>
+        <>resume</>
       </RootLayout>
     ),
   },
