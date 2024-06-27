@@ -31,7 +31,9 @@ const RootLayout = (props: RootLayoutProps) => {
           <Box component="section">
             <Header />
           </Box>
-          <Box className={styles.main}>{children}</Box>
+          <Box className={styles.main} sx={{ width: { xs: 'auto', sm: '100%' }, margin: { xs: '0 -24px', sm: '0' } }}>
+            {children}
+          </Box>
         </Box>
       </Box>
     </HelmetProvider>
