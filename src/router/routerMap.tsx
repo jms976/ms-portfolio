@@ -1,7 +1,8 @@
 import { ReactElement, Suspense } from 'react';
-import { RouteObject, Navigate, Outlet } from 'react-router-dom';
+import { RouteObject, Outlet } from 'react-router-dom';
 import { RootLayout } from '../layout/RootLayout';
 import { About } from '../pages/About';
+import { IdGuards, NavigateDefault } from './guards';
 
 export type RouteConfig = Omit<RouteObject, 'children'> & {
   children?: RouteConfig[];
@@ -13,31 +14,32 @@ export const routes: RouteConfig[] = [
   {
     id: 'MS Potfolio',
     index: true,
-    element: <Navigate to="/about" replace />,
+    path: 'about',
+    element: <About />,
   },
   {
     id: 'about',
-    path: '/about',
+    path: 'about',
     element: <About />,
   },
   {
     id: 'resume',
-    path: '/resume',
+    path: 'resume',
     element: <>resume</>,
   },
   {
     id: 'project',
-    path: '/project',
+    path: 'project',
     element: <>project</>,
   },
   {
     id: 'skills',
-    path: '/skills',
+    path: 'skills',
     element: <>skills</>,
   },
   {
     id: 'contact',
-    path: '/contact',
+    path: 'contact',
     element: <>contact</>,
   },
 ];
@@ -48,15 +50,28 @@ export const routeMap: RouteConfig[] = [
     path: '/',
     element: (
       <Suspense fallback>
-        <RootLayout>
-          <Outlet />
-        </RootLayout>
+        <IdGuards />
       </Suspense>
     ),
     children: [
       {
         errorElement: <>Error</>,
-        children: [...routes],
+        children: [
+          {
+            id: 'potfolioId',
+            path: '/:id',
+            element: (
+              <RootLayout>
+                <Outlet />
+              </RootLayout>
+            ),
+            children: [...routes],
+          },
+          {
+            path: '*',
+            element: <NavigateDefault />,
+          },
+        ],
       },
     ],
   },

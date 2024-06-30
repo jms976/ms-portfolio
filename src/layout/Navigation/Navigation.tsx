@@ -1,5 +1,5 @@
 import { forwardRef, useState, useEffect } from 'react';
-import { Link, LinkProps, useLocation } from 'react-router-dom';
+import { Link, LinkProps, useLocation, useOutletContext } from 'react-router-dom';
 
 import {
   AppBar,
@@ -25,15 +25,17 @@ const LinkBehavior = forwardRef<any, Omit<LinkProps, 'to'>>((props, ref) => (
 ));
 
 const Navigation = () => {
-  const [Title] = routes;
+  const potfolioId = useOutletContext();
+
+  const [title] = routes;
   const routeList = ({ isIndex }: { isIndex?: boolean }) =>
     routes.filter(({ index, hideNav }) => !index && !(isIndex && hideNav));
 
   const { pathname } = useLocation();
-  const [currentPathname, setCurrentPathname] = useState(pathname.split('/').at(1));
+  const [currentPathname, setCurrentPathname] = useState(pathname.split('/').at(2));
 
   useEffect(() => {
-    setCurrentPathname(pathname.split('/').at(1));
+    setCurrentPathname(pathname.split('/').at(2));
   }, [pathname]);
 
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -49,8 +51,13 @@ const Navigation = () => {
       <AppBar component="nav" color="inherit">
         <Toolbar>
           <Typography variant="h6" component="div" className={styles.headerTitle}>
-            <Button component={LinkBehavior} {...(Title.path && { to: Title.path })} variant="text" color="inherit">
-              {Title.id}
+            <Button
+              component={LinkBehavior}
+              {...(title.path && { to: `/${potfolioId}/${title.path}` })}
+              variant="text"
+              color="inherit"
+            >
+              {title.id}
             </Button>
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }} className={styles.headerLink}>
@@ -62,7 +69,7 @@ const Navigation = () => {
                 className={`${currentPathname === id && styles.active}`}
                 variant="text"
                 color="inherit"
-                {...(path && { to: path })}
+                {...(path && { to: `/${potfolioId}/${path}` })}
               >
                 {id}
               </Button>
@@ -115,7 +122,7 @@ const Navigation = () => {
                   disabled={!path}
                   key={id}
                   onClick={handleDrawerToggle}
-                  {...(path && { to: path })}
+                  {...(path && { to: `/${potfolioId}/${path}` })}
                 >
                   <span className={styles.navListText}>{id}</span>
                 </ListItemButton>

@@ -18,7 +18,7 @@ const RootLayout = (props: RootLayoutProps) => {
   return (
     <HelmetProvider>
       <Helmet titleTemplate="%s | 명수 Frontened Developer" defaultTitle="명수 포폴" defer={false}>
-        {pathname && <title>{pathname.split('/').at(1)}</title>}
+        {pathname && <title>{pathname.split('/').at(2)}</title>}
       </Helmet>
       <Box component="div" className={styles.wrapper}>
         <Navigation />
