@@ -12,7 +12,7 @@ export type RouteConfig = Omit<RouteObject, 'children'> & {
 
 export const routes: RouteConfig[] = [
   {
-    id: 'MS Potfolio',
+    id: 'Potfolio',
     index: true,
     path: 'about',
     element: <About />,

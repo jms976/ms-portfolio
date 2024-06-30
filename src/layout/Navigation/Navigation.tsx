@@ -16,6 +16,7 @@ import {
 } from '@mui/material';
 import { Close, Menu } from '@mui/icons-material';
 
+import { HeaderData } from '../../mockData/header/data';
 import { routes } from '../../router/routerMap';
 import styles from './Navigation.module.css';
 
@@ -26,6 +27,7 @@ const LinkBehavior = forwardRef<any, Omit<LinkProps, 'to'>>((props, ref) => (
 
 const Navigation = () => {
   const potfolioId = useOutletContext();
+  const initial = HeaderData.find((item) => item.id === Number(potfolioId))?.initial ?? '';
 
   const [title] = routes;
   const routeList = ({ isIndex }: { isIndex?: boolean }) =>
@@ -57,7 +59,7 @@ const Navigation = () => {
               variant="text"
               color="inherit"
             >
-              {title.id}
+              {initial} {title.id}
             </Button>
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }} className={styles.headerLink}>
