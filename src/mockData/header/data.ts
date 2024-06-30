@@ -1,6 +1,7 @@
 type HeaderDataType = {
   id: number;
-  name?: string;
+  name: string;
+  initial?: string;
   avatar?: string;
   bedgeText: string;
   mainTitle: string;
@@ -13,7 +14,8 @@ type HeaderDataType = {
 export const HeaderData: HeaderDataType[] = [
   {
     id: 1,
-    name: 'MS',
+    name: '장명수',
+    initial: 'MS',
     // avatar: '/assets/images/',
     bedgeText: 'FE Developer',
     mainTitle: '반갑습니다 :) \n FE 개발자 장명수 입니다',
@@ -25,7 +27,8 @@ export const HeaderData: HeaderDataType[] = [
   },
   {
     id: 2,
-    name: 'ME',
+    name: '맹짱',
+    initial: 'ME',
     avatar: '/assets/images/avatar/mywife.webp',
     bedgeText: '농협 여왕',
     mainTitle: '반갑습니다 :) \n 농협 신입사원 장명은 입니다',

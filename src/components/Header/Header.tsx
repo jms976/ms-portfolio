@@ -14,7 +14,7 @@ const Header = () => {
   const data = HeaderData.find((item) => item.id === Number(potfolioId));
 
   if (!data) {
-    return <>error</>;
+    return <>데이터를 찾을 수 없습니다.</>;
   }
 
   return (
@@ -30,7 +30,7 @@ const Header = () => {
             bgcolor: tokens.color.polarGreen7,
           }}
           {...(data.avatar && { src: data.avatar })}
-          {...(data.name && { children: data.name })}
+          {...(data.initial && { children: data.initial })}
         />
         <Typography className={styles.customBedge}>{data?.bedgeText}</Typography>
       </Box>

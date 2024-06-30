@@ -1,11 +1,12 @@
 import { ReactNode } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useOutletContext } from 'react-router-dom';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { Box, Toolbar } from '@mui/material';
 
 import { Navigation } from '../Navigation';
 import styles from './RootLayout.module.css';
 import { Header } from '../../components/Header';
+import { HeaderData } from '../../mockData/header/data';
 
 type RootLayoutProps = {
   children?: ReactNode;
@@ -15,10 +16,17 @@ const RootLayout = (props: RootLayoutProps) => {
   const { children } = props;
   const { pathname } = useLocation();
 
+  const potfolioId = useOutletContext();
+  const header = HeaderData.find((item) => item.id === Number(potfolioId));
+
   return (
     <HelmetProvider>
-      <Helmet titleTemplate="%s | 명수 Frontened Developer" defaultTitle="명수 포폴" defer={false}>
-        {pathname && <title>{pathname.split('/').at(2)}</title>}
+      <Helmet titleTemplate="%s" defaultTitle="명수 포폴" defer={false}>
+        {pathname && (
+          <title>
+            {pathname.split('/').at(2)}| {header?.name} {header?.bedgeText}
+          </title>
+        )}
       </Helmet>
       <Box component="div" className={styles.wrapper}>
         <Navigation />
