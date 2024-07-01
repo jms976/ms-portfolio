@@ -25,6 +25,7 @@ const Header = () => {
       <Box className={styles.avatarWrapper} sx={{ gap: { xs: '.5em', md: '1em' } }}>
         <Avatar
           sx={{
+            margin: { xs: 'auto', md: '0' },
             width: { xs: '80px', md: '120px' },
             height: { xs: '80px', md: '120px' },
             bgcolor: tokens.color.polarGreen7,
@@ -60,10 +61,12 @@ const Header = () => {
           href="mailto:myungujang@gmail.com"
           tabIndex={-1}
           size="small"
-          color="inherit"
+          sx={{ color: 'color.content' }}
           startIcon={<MailOutline />}
         >
-          <span style={{ fontSize: '10px' }}>{data.email}</span>
+          <Typography component="span" sx={{ fontSize: '10px', color: 'color.content' }}>
+            {data.email}
+          </Typography>
         </Button>
         {!isTop && (
           <>
