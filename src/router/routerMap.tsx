@@ -1,8 +1,12 @@
 import { ReactElement, Suspense } from 'react';
 import { RouteObject, Outlet } from 'react-router-dom';
+import { IdGuards, NavigateDefault } from './guards';
+
 import { RootLayout } from '../layout/RootLayout';
 import { About } from '../pages/About';
-import { IdGuards, NavigateDefault } from './guards';
+import { Contact } from '../pages/Contact';
+import { Project } from '../pages/Project';
+import { Resume } from '../pages/Resume';
 
 export type RouteConfig = Omit<RouteObject, 'children'> & {
   children?: RouteConfig[];
@@ -25,22 +29,17 @@ export const routes: RouteConfig[] = [
   {
     id: 'resume',
     path: 'resume',
-    element: <>resume</>,
+    element: <Resume />,
   },
   {
     id: 'project',
     path: 'project',
-    element: <>project</>,
-  },
-  {
-    id: 'skills',
-    path: 'skills',
-    element: <>skills</>,
+    element: <Project />,
   },
   {
     id: 'contact',
     path: 'contact',
-    element: <>contact</>,
+    element: <Contact />,
   },
 ];
 

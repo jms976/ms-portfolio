@@ -105,7 +105,7 @@ const Navigation = () => {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ display: { sm: 'none' } }}
+            sx={{ ml: 1, display: { sm: 'none' } }}
           >
             <Menu />
           </IconButton>
