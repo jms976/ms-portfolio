@@ -32,26 +32,26 @@ const Header = () => {
           {...(data.avatar && { src: data.avatar })}
           {...(data.initial && { children: data.initial })}
         />
-        <Typography className={styles.customBedge}>{data?.bedgeText}</Typography>
+        <Typography className={styles.bedgeText}>{data?.bedgeText}</Typography>
       </Box>
       <Box>
-        <Typography className={styles.about} component="pre" variant="h6">
+        <Typography className={styles.mainTitle} sx={{ color: 'color.title' }} component="pre" variant="h6">
           {data.mainTitle}
         </Typography>
         {!isTop && (
           <>
             <Divider sx={{ margin: '2em 1em 2em 0' }} />
-            <Typography className={styles.subTitle} variant="h6">
+            <Typography className={styles.subTitle} sx={{ color: 'color.title' }} variant="h6">
               ABOUT
             </Typography>
-            <Typography variant="body2" sx={{ margin: '10px 0' }}>
+            <Typography variant="body2" sx={{ margin: '10px 0', color: 'color.content' }}>
               {data.about}
             </Typography>
           </>
         )}
         <Divider sx={{ margin: { xs: '10px 0', md: '2em 1em 2em 0' } }} />
         {!isTop && (
-          <Typography className={styles.subTitle} variant="h6">
+          <Typography className={styles.subTitle} sx={{ color: 'color.title' }} variant="h6">
             CONTACT
           </Typography>
         )}
@@ -67,10 +67,10 @@ const Header = () => {
         </Button>
         {!isTop && (
           <>
-            <Typography variant="body2" sx={{ margin: '10px 0' }}>
+            <Typography variant="body2" sx={{ margin: '10px 0', color: 'color.content' }}>
               {data.bottomMessage1}
             </Typography>
-            <Typography variant="body2" sx={{ margin: '10px 0' }}>
+            <Typography variant="body2" sx={{ margin: '10px 0', color: 'color.content' }}>
               {data.bottomMessage2}
             </Typography>
           </>

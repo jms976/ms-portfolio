@@ -17,7 +17,7 @@
   justify-content: space-evenly;
 }
 
-.customBedge {
+.bedgeText {
   display: inline-block;
   width: max-content;
   font-style: italic;
@@ -29,13 +29,12 @@
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 15px 1px;
 }
 
-.about {
+.mainTitle {
   white-space: pre-line
 }
 
 .subTitle {
   font-size: .7em !important;
-  color: var(--color-gray-9);
   font-weight: 800;
   letter-spacing: .25em !important;
   margin-bottom: 2em !important;

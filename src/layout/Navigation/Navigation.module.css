@@ -1,5 +1,4 @@
 .headerTitle a {
-  color: var(--color-gray-8);
   font-family: Raleway, Helvetica, sans-serif;
   font-weight: 800;
   font-size: .7em;
@@ -21,7 +20,6 @@
   font-weight: 400;
   letter-spacing: .25em;
   text-transform: uppercase;
-  color: var(--color-gray-6);
   line-height: .8em;
 }
 
@@ -32,7 +30,6 @@
 }
 
 .headerLink .active {
-  color: var(--color-gray-9);
   font-weight: 600;
 }
 
@@ -43,11 +40,15 @@
 }
 
 .navListText {
-  color: var(--color-gray-6);
   font-family: Raleway, Helvetica, sans-serif;
   font-weight: 700;
   font-size: .7em;
   letter-spacing: .25em;
   line-height: 1.65;
   text-transform: uppercase;
+}
+
+.themeIcon {
+  display: flex;
+  justify-content: end;
 }

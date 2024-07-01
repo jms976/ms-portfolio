@@ -16,8 +16,8 @@ const RootLayout = (props: RootLayoutProps) => {
   const { children } = props;
   const { pathname } = useLocation();
 
-  const potfolioId = useOutletContext();
-  const header = HeaderData.find((item) => item.id === Number(potfolioId));
+  const portfolioId = useOutletContext();
+  const header = HeaderData.find((item) => item.id === Number(portfolioId));
 
   return (
     <HelmetProvider>

@@ -12,7 +12,7 @@ export type RouteConfig = Omit<RouteObject, 'children'> & {
 
 export const routes: RouteConfig[] = [
   {
-    id: 'Potfolio',
+    id: 'Portfolio',
     index: true,
     path: 'about',
     element: <About />,
@@ -58,7 +58,7 @@ export const routeMap: RouteConfig[] = [
         errorElement: <>Error</>,
         children: [
           {
-            id: 'potfolioId',
+            id: 'portfolioId',
             path: '/:id',
             element: (
               <RootLayout>

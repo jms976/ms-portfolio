@@ -1,9 +1,8 @@
 {
-  "name": "potfolio",
+  "name": "portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://jms976.github.io/ms-potfolio",
   "scripts": {
     "start": "vite",
     "test:type": "tsc --noEmit",

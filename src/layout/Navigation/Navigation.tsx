@@ -1,4 +1,4 @@
-import { forwardRef, useState, useEffect } from 'react';
+import { forwardRef, useState, useEffect, useContext } from 'react';
 import { Link, LinkProps, useLocation, useOutletContext } from 'react-router-dom';
 
 import {
@@ -13,12 +13,14 @@ import {
   List,
   ListItem,
   ListItemButton,
+  useTheme,
 } from '@mui/material';
-import { Close, Menu } from '@mui/icons-material';
+import { Close, Menu, Brightness4, Brightness7 } from '@mui/icons-material';
 
 import { HeaderData } from '../../mockData/header/data';
 import { routes } from '../../router/routerMap';
 import styles from './Navigation.module.css';
+import { ColorModeContext } from '../../styles/theme/ThemeContainer';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const LinkBehavior = forwardRef<any, Omit<LinkProps, 'to'>>((props, ref) => (
@@ -26,8 +28,11 @@ const LinkBehavior = forwardRef<any, Omit<LinkProps, 'to'>>((props, ref) => (
 ));
 
 const Navigation = () => {
-  const potfolioId = useOutletContext();
-  const initial = HeaderData.find((item) => item.id === Number(potfolioId))?.initial ?? '';
+  const theme = useTheme();
+  const colorMode = useContext(ColorModeContext);
+
+  const portfolioId = useOutletContext();
+  const initial = HeaderData.find((item) => item.id === Number(portfolioId))?.initial ?? '';
 
   const [title] = routes;
   const routeList = ({ isIndex }: { isIndex?: boolean }) =>
@@ -55,14 +60,20 @@ const Navigation = () => {
           <Typography variant="h6" component="div" className={styles.headerTitle}>
             <Button
               component={LinkBehavior}
-              {...(title.path && { to: `/${potfolioId}/${title.path}` })}
+              {...(title.path && { to: `/${portfolioId}/${title.path}` })}
               variant="text"
               color="inherit"
             >
               {initial} {title.id}
             </Button>
           </Typography>
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }} className={styles.headerLink}>
+          <Box
+            sx={{
+              display: { xs: 'none', sm: 'block' },
+              flexGrow: 1,
+            }}
+            className={styles.headerLink}
+          >
             {routeList({ isIndex: true }).map(({ id, path }) => (
               <Button
                 component={LinkBehavior}
@@ -71,7 +82,8 @@ const Navigation = () => {
                 className={`${currentPathname === id && styles.active}`}
                 variant="text"
                 color="inherit"
-                {...(path && { to: `/${potfolioId}/${path}` })}
+                sx={{ color: `${currentPathname === id && 'color.active'}` }}
+                {...(path && { to: `/${portfolioId}/${path}` })}
               >
                 {id}
               </Button>
@@ -83,6 +95,11 @@ const Navigation = () => {
           >
             <span>{currentPathname}</span>
           </Box>
+
+          <IconButton sx={{ ml: 1 }} onClick={colorMode.toggleColorMode} color="inherit">
+            {theme.palette.mode === 'dark' ? <Brightness7 /> : <Brightness4 />}
+          </IconButton>
+
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -124,7 +141,7 @@ const Navigation = () => {
                   disabled={!path}
                   key={id}
                   onClick={handleDrawerToggle}
-                  {...(path && { to: `/${potfolioId}/${path}` })}
+                  {...(path && { to: `/${portfolioId}/${path}` })}
                 >
                   <span className={styles.navListText}>{id}</span>
                 </ListItemButton>
