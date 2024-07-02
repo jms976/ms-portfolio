@@ -1,40 +1,46 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
-import { Paper } from '@mui/material';
-import { Document, Page, pdfjs } from 'react-pdf';
+import { Button, Paper } from '@mui/material';
 
-import useWindowSize from './hooks/useWindowSize';
 import { ResumeData } from '../../mockData/resume/data';
 import styles from './Resume.module.css';
-
-pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
+import { PdfViewer } from '../../components/PdfViewer';
+import { tokens } from '../../styles/tokens';
 
 const Resume = () => {
-  const [numPages, setNumPages] = useState(0);
-
-  const windowSize = useWindowSize();
-
   const portfolioId = useOutletContext();
   const data = ResumeData.find((item) => item.id === portfolioId);
 
-  const onDocumentLoadSuccess = ({ numPages }: { numPages: number }) => {
-    setNumPages(numPages);
-  };
+  const [displayButton, setDisplayButton] = useState('none');
 
   return (
-    <Paper variant="outlined" className={styles.root}>
-      <Document file={data?.fileUrl} className={styles.documentWrapper} onLoadSuccess={onDocumentLoadSuccess}>
-        {Array.from(new Array(numPages), (_, index) => (
-          <div key={index} className={styles.pdfWrapper}>
-            <Page
-              width={windowSize.width * 0.7}
-              pageNumber={index + 1}
-              renderAnnotationLayer={false}
-              renderTextLayer={false}
-            />
-          </div>
-        ))}
-      </Document>
+    <Paper
+      variant="outlined"
+      className={styles.root}
+      onMouseEnter={() => setDisplayButton('display')}
+      onMouseLeave={() => setDisplayButton('none')}
+    >
+      {data?.fileUrl && (
+        <Button
+          LinkComponent="a"
+          href={data.fileUrl}
+          target="_blank"
+          download={`${data?.fileName ?? 'Resume'}.pdf`}
+          variant="outlined"
+          size="small"
+          className={styles.downButton}
+          sx={{
+            display: displayButton,
+            top: { md: '120px', sm: '275px', xs: '268px' },
+            right: { md: '6%', sm: '55px', xs: '30px' },
+            color: tokens.color.blue9,
+            borderColor: tokens.color.blue9,
+          }}
+        >
+          이력서 다운로드
+        </Button>
+      )}
+      {data?.fileUrl && <PdfViewer url={data.fileUrl} />}
     </Paper>
   );
 };

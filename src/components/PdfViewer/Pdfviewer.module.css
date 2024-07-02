@@ -1,0 +1,16 @@
+.documentWrapper.darkDocument {
+  background: var(--color-gray-6)
+}
+
+.documentWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  background: var(--color-gray-3);
+};
+
+.pdfWrapper {
+  display: flex;
+  justify-content: center;
+}

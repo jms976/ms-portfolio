@@ -1,18 +1,9 @@
 .root {
+  position: relative;
   width: 100%;
-  /* padding: 20px; */
 }
 
-.documentWrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 20px;
-  background: var(--color-gray-4);
-};
-
-.pdfWrapper {
-  display: flex;
-  justify-content: center;
-  padding: 20px;
+.downButton {
+  position: fixed !important;
+  z-index: 1;
 }
