@@ -13,7 +13,7 @@ const IdGuards = () => {
     return <Navigate to={toPath} replace />;
   }
 
-  return <Outlet context={pathArray.at(1) ?? 1} />;
+  return <Outlet context={Number(pathArray.at(1)) ?? 1} />;
 };
 
 export default IdGuards;

@@ -10,8 +10,8 @@ const Header = () => {
   const theme = useTheme();
   const isTop = useMediaQuery(theme.breakpoints.down('md'));
 
-  const potfolioId = useOutletContext();
-  const data = HeaderData.find((item) => item.id === Number(potfolioId));
+  const portfolioId = useOutletContext();
+  const data = HeaderData.find((item) => item.id === portfolioId);
 
   if (!data) {
     return <>데이터를 찾을 수 없습니다.</>;

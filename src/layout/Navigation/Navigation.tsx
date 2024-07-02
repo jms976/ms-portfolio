@@ -32,7 +32,7 @@ const Navigation = () => {
   const colorMode = useContext(ColorModeContext);
 
   const portfolioId = useOutletContext();
-  const initial = HeaderData.find((item) => item.id === Number(portfolioId))?.initial ?? '';
+  const initial = HeaderData.find((item) => item.id === portfolioId)?.initial ?? '';
 
   const [title] = routes;
   const routeList = ({ isIndex }: { isIndex?: boolean }) =>

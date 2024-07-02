@@ -18,7 +18,7 @@ export const HeaderData: HeaderDataType[] = [
     initial: 'MS',
     // avatar: '/assets/images/',
     bedgeText: 'FE Developer',
-    mainTitle: '반갑습니다 :) \n FE 개발자 장명수 입니다',
+    mainTitle: '반갑습니다 :) \n FE개발자 장명수 입니다',
     about:
       '이 포트폴리오 사이트는 React / MUI / VITE ... 등으로 사용하여 제작 되었습니다. 저를 더 많이 알고 싶으시면 아래 메일로 연락 주세요. 서울 마포 근처라면 항시 커피챗 가능합니다.',
     email: 'myungsujang89@gmail.com',

@@ -1,5 +1,5 @@
 import { ReactElement, Suspense } from 'react';
-import { RouteObject, Outlet } from 'react-router-dom';
+import { RouteObject } from 'react-router-dom';
 import { IdGuards, NavigateDefault } from './guards';
 
 import { RootLayout } from '../layout/RootLayout';
@@ -61,7 +61,7 @@ export const routeMap: RouteConfig[] = [
             path: '/:id',
             element: (
               <RootLayout>
-                <Outlet />
+                <IdGuards />
               </RootLayout>
             ),
             children: [...routes],

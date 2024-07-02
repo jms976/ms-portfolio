@@ -17,7 +17,7 @@ const RootLayout = (props: RootLayoutProps) => {
   const { pathname } = useLocation();
 
   const portfolioId = useOutletContext();
-  const header = HeaderData.find((item) => item.id === Number(portfolioId));
+  const header = HeaderData.find((item) => item.id === portfolioId);
 
   return (
     <HelmetProvider>
@@ -34,7 +34,7 @@ const RootLayout = (props: RootLayoutProps) => {
         <Box
           component="main"
           className={styles.mainWrapper}
-          sx={{ p: 3, display: { xs: 'block', md: 'flex' }, gap: { md: '40px' } }}
+          sx={{ p: 3, display: { xs: 'block', md: 'flex' }, gap: { md: '20px' } }}
         >
           <Box component="section">
             <Header />
