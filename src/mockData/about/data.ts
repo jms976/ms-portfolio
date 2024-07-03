@@ -45,6 +45,10 @@ export const AboutData = [
         imageUrl: '/assets/images/skill/styled-component.webp',
       },
       {
+        name: 'Vanilla-Extract',
+        imageUrl: '/assets/images/skill/vanilla-extract.webp',
+      },
+      {
         name: 'Redux',
         imageUrl: '/assets/images/skill/redux.webp',
       },
