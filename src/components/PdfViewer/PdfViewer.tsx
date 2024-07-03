@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { forwardRef, useState } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
 import { Skeleton, useMediaQuery, useTheme } from '@mui/material';
 
@@ -11,7 +11,7 @@ type PdfViewerProps = {
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
-const PdfViewer = (props: PdfViewerProps) => {
+const PdfViewer = forwardRef<HTMLDivElement, PdfViewerProps>((props, forwardRef) => {
   const { url } = props;
 
   const theme = useTheme();
@@ -29,6 +29,7 @@ const PdfViewer = (props: PdfViewerProps) => {
 
   return (
     <Document
+      ref={forwardRef}
       file={url}
       className={`${styles.documentWrapper} ${theme.palette.mode === 'dark' && styles.darkDocument}`}
       onLoadSuccess={onDocumentLoadSuccess}
@@ -47,6 +48,6 @@ const PdfViewer = (props: PdfViewerProps) => {
       ))}
     </Document>
   );
-};
+});
 
 export default PdfViewer;

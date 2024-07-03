@@ -24,7 +24,7 @@ const ThemeContainer = (props: PropsWithChildren) => {
   return (
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
-        <Paper sx={{ bgcolor: 'background.body', height: '100vh', overflow: 'auto' }}>{children}</Paper>
+        <Paper sx={{ bgcolor: 'background.body', boxShadow: 'none' }}>{children}</Paper>
       </ThemeProvider>
     </ColorModeContext.Provider>
   );
