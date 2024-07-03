@@ -15,7 +15,7 @@ const About = () => {
       <Typography className={styles.introduceWrapper} sx={{ fontSize: '18px' }} component="pre">
         {data?.introduceText}
       </Typography>
-      <Divider>SKIIL STACK</Divider>
+      <Divider sx={{ margin: { xs: '10px 0', md: '2em 1em 2em 0' } }}>SKILLS STACK</Divider>
       <Box
         sx={{
           display: 'grid',

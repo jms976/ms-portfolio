@@ -3,9 +3,9 @@ import { useOutletContext } from 'react-router-dom';
 import { Button, Paper } from '@mui/material';
 
 import { ResumeData } from '../../mockData/resume/data';
-import styles from './Resume.module.css';
 import { PdfViewer } from '../../components/PdfViewer';
 import { tokens } from '../../styles/tokens';
+import styles from './Resume.module.css';
 
 const Resume = () => {
   const portfolioId = useOutletContext();
@@ -15,6 +15,13 @@ const Resume = () => {
 
   const [displayButton, setDisplayButton] = useState('none');
   const [scrollTop, setScrollTop] = useState(0);
+  const [buttonRight, setButtonRight] = useState(0);
+
+  const setDesktopButtonRight = () => {
+    if (!pdfRef.current) return;
+    const pdfRect = pdfRef.current.getBoundingClientRect();
+    setButtonRight(window.innerWidth - (pdfRect.left + pdfRect.width - 20));
+  };
 
   const handleScroll = () => {
     setDisplayButton('none');
@@ -29,14 +36,30 @@ const Resume = () => {
       window.addEventListener('scroll', handleScroll);
       window.addEventListener('scrollend', handleScrollend);
     };
+    /* eslint-disable react-hooks/exhaustive-deps */
+  }, []);
+
+  useLayoutEffect(() => {
+    window.addEventListener('resize', setDesktopButtonRight);
+    return () => {
+      window.addEventListener('resize', setDesktopButtonRight);
+    };
   }, []);
 
   return (
     <Paper
       variant="outlined"
       className={styles.root}
-      onMouseEnter={() => setDisplayButton('display')}
+      onMouseEnter={() => {
+        setDesktopButtonRight();
+        setDisplayButton('display');
+      }}
       onMouseLeave={() => setDisplayButton('none')}
+      onTouchStart={() => {
+        setDesktopButtonRight();
+        setDisplayButton('display');
+      }}
+      onTouchEnd={() => setDisplayButton('none')}
     >
       {data?.fileUrl && (
         <Button
@@ -54,7 +77,7 @@ const Resume = () => {
               sm: `${scrollTop < 275 ? 275 - scrollTop : 80}px`,
               xs: `${scrollTop < 268 ? 268 - scrollTop : 70}px`,
             },
-            right: { md: '6%', sm: '55px', xs: '30px' },
+            right: { md: buttonRight, sm: '55px', xs: '30px' },
             color: tokens.color.blue9,
             borderColor: tokens.color.blue9,
           }}
