@@ -11,6 +11,8 @@ const getDesignTokens = (mode: PaletteMode) => ({
             typography: tokens.color.gray8,
             active: tokens.color.gray9,
             title: tokens.color.gray9,
+            icon: tokens.color.cyan9,
+            iconText: tokens.color.gray6,
           },
           background: {
             body: tokens.color.gray2,
@@ -24,10 +26,12 @@ const getDesignTokens = (mode: PaletteMode) => ({
             active: tokens.color.lime9,
             title: tokens.color.gray0,
             text: tokens.color.gray9,
+            icon: tokens.color.cyan9,
+            iconText: tokens.color.gray1,
           },
           background: {
             default: tokens.color.gray9,
-            body: tokens.color.gray7,
+            body: tokens.color.gray8,
           },
         }),
   },

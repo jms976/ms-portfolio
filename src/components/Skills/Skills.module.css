@@ -12,6 +12,5 @@
 .text {
   display: flex;
   justify-content: center;
-  font-size: .8em !important;
-  font-weight: bold !important;
+  font-size: 0.8rem !important;
 }

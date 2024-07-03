@@ -20,7 +20,7 @@ const Resume = () => {
   const setDesktopButtonRight = () => {
     if (!pdfRef.current) return;
     const pdfRect = pdfRef.current.getBoundingClientRect();
-    setButtonRight(window.innerWidth - (pdfRect.left + pdfRect.width - 20));
+    setButtonRight(window.innerWidth - (pdfRect.left + pdfRect.width - 30));
   };
 
   const handleScroll = () => {
@@ -59,7 +59,6 @@ const Resume = () => {
         setDesktopButtonRight();
         setDisplayButton('display');
       }}
-      onTouchEnd={() => setDisplayButton('none')}
     >
       {data?.fileUrl && (
         <Button

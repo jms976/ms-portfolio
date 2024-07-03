@@ -19,7 +19,7 @@ const Header = () => {
 
   return (
     <Box
-      className={`${styles.root} ${isTop && styles.topRoot}`}
+      className={`${styles.root} ${isTop ? styles.topRoot : styles.leftRoot}`}
       sx={{ display: 'flex', flexDirection: { xs: 'row', md: 'column' }, gap: { xs: '.5em', md: '2em' } }}
     >
       <Box className={styles.avatarWrapper} sx={{ gap: { xs: '.5em', md: '1em' } }}>
@@ -28,7 +28,7 @@ const Header = () => {
             margin: { xs: 'auto', md: '0' },
             width: { xs: '80px', md: '120px' },
             height: { xs: '80px', md: '120px' },
-            bgcolor: tokens.color.polarGreen7,
+            bgcolor: tokens.color.polarGreen6,
           }}
           {...(data.avatar && { src: data.avatar })}
           {...(data.initial && { children: data.initial })}
@@ -36,7 +36,12 @@ const Header = () => {
         <Typography className={styles.bedgeText}>{data?.bedgeText}</Typography>
       </Box>
       <Box>
-        <Typography className={styles.mainTitle} sx={{ color: 'color.title' }} component="pre" variant="h6">
+        <Typography
+          className={styles.mainTitle}
+          sx={{ color: 'color.title', fontFamily: 'monospace' }}
+          component="pre"
+          variant="h6"
+        >
           {data.mainTitle}
         </Typography>
         {!isTop && (
@@ -58,7 +63,7 @@ const Header = () => {
         )}
         <Button
           LinkComponent={'a'}
-          href="mailto:myungujang@gmail.com"
+          href={`mailto:${data.email}`}
           tabIndex={-1}
           size="small"
           sx={{ color: 'color.content' }}

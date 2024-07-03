@@ -34,12 +34,22 @@ const RootLayout = (props: RootLayoutProps) => {
         <Box
           component="main"
           className={styles.mainWrapper}
-          sx={{ p: 3, display: { xs: 'block', md: 'flex' }, gap: { md: '20px' } }}
+          sx={{
+            p: 3,
+            display: { xs: 'block', md: 'flex' },
+            gap: { md: '20px' },
+          }}
         >
           <Box component="section">
             <Header />
           </Box>
-          <Box className={styles.main} sx={{ width: { xs: 'auto', sm: '100%' }, margin: { xs: '0 -24px', sm: '0' } }}>
+          <Box
+            className={styles.main}
+            sx={{
+              width: { xs: 'auto', sm: '100%' },
+              margin: { xs: '0 -24px -24px', sm: '0' },
+            }}
+          >
             {children}
           </Box>
         </Box>

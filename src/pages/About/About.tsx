@@ -2,8 +2,8 @@ import { Divider, Paper, Typography, Box } from '@mui/material';
 import { useOutletContext } from 'react-router-dom';
 
 import { AboutData } from '../../mockData/about/data';
-import styles from './About.module.css';
 import Skills from '../../components/Skills/Skills';
+import styles from './About.module.css';
 
 const About = () => {
   const portfolioId = useOutletContext();
@@ -11,16 +11,20 @@ const About = () => {
 
   return (
     <Paper variant="outlined" className={styles.root}>
-      <Divider sx={{ margin: '.1em  1em 2em 0' }}>INTRODUCE</Divider>
-      <Typography className={styles.introduceWrapper} sx={{ fontSize: '18px' }} component="pre">
+      <Divider sx={{ margin: '.1em 1em 2em 0', fontWeight: 'bold' }}>INTRODUCE</Divider>
+      <Typography
+        className={styles.introduceWrapper}
+        sx={{ color: 'color.content', lineHeight: '2rem' }}
+        component="pre"
+      >
         {data?.introduceText}
       </Typography>
-      <Divider sx={{ margin: '3em 1em 2em 0' }}>SKILLS STACK</Divider>
+      <Divider sx={{ margin: '3em 1em 2em 0', fontWeight: 'bold' }}>SKILLS STACK</Divider>
       <Box
         sx={{
           display: 'grid',
           gridTemplateColumns: { xs: '1fr 1fr 1fr', sm: '1fr 1fr 1fr 1fr' },
-          gridRowGap: '40px',
+          gridRowGap: { xs: '50px', sm: '60px' },
           width: '100%',
           padding: '20px 0',
         }}
