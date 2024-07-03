@@ -44,6 +44,30 @@ export const AboutData = [
         name: 'Styled-Component',
         imageUrl: '/assets/images/skill/styled-component.webp',
       },
+      {
+        name: 'Redux',
+        imageUrl: '/assets/images/skill/redux.webp',
+      },
+      {
+        name: 'zustand',
+        imageUrl: '/assets/images/skill/zustand.webp',
+      },
+      {
+        name: 'NodeJS',
+        imageUrl: '/assets/images/skill/nodejs.webp',
+      },
+      {
+        name: 'MongoDB',
+        imageUrl: '/assets/images/skill/mongodb.webp',
+      },
+      {
+        name: 'Express',
+        imageUrl: '/assets/images/skill/express.webp',
+      },
+      {
+        name: 'Github',
+        imageUrl: '/assets/images/skill/github.webp',
+      },
     ],
   },
 ];

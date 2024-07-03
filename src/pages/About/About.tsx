@@ -11,11 +11,11 @@ const About = () => {
 
   return (
     <Paper variant="outlined" className={styles.root}>
-      <Divider>INTRODUCE</Divider>
+      <Divider sx={{ margin: '.1em  1em 2em 0' }}>INTRODUCE</Divider>
       <Typography className={styles.introduceWrapper} sx={{ fontSize: '18px' }} component="pre">
         {data?.introduceText}
       </Typography>
-      <Divider sx={{ margin: { xs: '10px 0', md: '2em 1em 2em 0' } }}>SKILLS STACK</Divider>
+      <Divider sx={{ margin: '3em 1em 2em 0' }}>SKILLS STACK</Divider>
       <Box
         sx={{
           display: 'grid',
