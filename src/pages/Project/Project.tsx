@@ -1,26 +1,41 @@
+import { useOutletContext } from 'react-router-dom';
 import { Paper, Typography, Box } from '@mui/material';
-import styles from './Project.module.css';
+
 import { ProjectCard } from '../../components/ProjectCard';
+import styles from './Project.module.css';
+import { ProjectData } from '../../mockData/project/data';
 
 const Project = () => {
+  const portfoiliId = useOutletContext();
+  const data = ProjectData.find((item) => item.id === portfoiliId);
+
   return (
     <Paper variant="outlined" className={styles.root}>
-      <Typography gutterBottom sx={{ fontWeight: 'bold', fontSize: '1.2rem', color: 'color.title' }}>
+      <Typography sx={{ fontWeight: 'bold', fontSize: '1.2rem', color: 'color.title', marginBottom: '.5em' }}>
         PROJECT
       </Typography>
       <Box
         sx={{
           display: 'grid',
+          justifyContent: 'center',
           gridTemplateColumns: {
             xs: 'repeat(1, minmax(200px, 1fr))',
             sm: 'repeat(2, minmax(200px, 1fr))',
-            md: 'repeat(auto-fit, 280px)',
+            md: 'repeat(auto-fit, minmax(250px, 1fr))',
           },
-          gap: '20px',
+          gap: '1rem',
           width: '100%',
         }}
       >
-        <ProjectCard
+        {data &&
+          data.projects.map(({ images, ...rest }, index) => (
+            <ProjectCard
+              key={index}
+              imageUrl={images.find((image) => image.thumbnail)?.url ?? images.at(0)?.url}
+              {...rest}
+            />
+          ))}
+        {/* <ProjectCard
           imageUrl="/assets/images/skill/react-query.webp"
           title="test"
           period="2022.01.01 - 2024.01.01"
@@ -54,7 +69,7 @@ const Project = () => {
           period="2022.01.01 - 2024.01.01"
           company="noPredict"
           description="그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거 "
-        />
+        /> */}
       </Box>
     </Paper>
   );

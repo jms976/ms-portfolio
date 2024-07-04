@@ -16,6 +16,7 @@ const getDesignTokens = (mode: PaletteMode) => ({
           },
           background: {
             body: tokens.color.gray2,
+            card: tokens.color.gray0,
           },
         }
       : {
@@ -32,6 +33,7 @@ const getDesignTokens = (mode: PaletteMode) => ({
           background: {
             default: tokens.color.gray9,
             body: tokens.color.gray8,
+            card: tokens.color.gray8,
           },
         }),
   },

@@ -1,6 +1,27 @@
+.cardRoot {
+  aspect-ratio: 1/1.1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardMedia {
+  height: 100%;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0%;
+}
+
 .cardDescription {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   overflow: hidden;
+  white-space: pre-wrap;
+}
+
+.noImage {
+  -webkit-line-clamp: 12;
 }

@@ -3,7 +3,7 @@ import { Box, Card, CardContent, CardMedia, Typography } from '@mui/material';
 import styles from './ProjectCard.module.css';
 
 type ProjectCardProps = {
-  imageUrl: string;
+  imageUrl?: string;
   title: string;
   period: string;
   company: string;
@@ -18,25 +18,25 @@ const ProjectCard = (props: ProjectCardProps) => {
   const { imageUrl, title, company, period, description } = props;
 
   return (
-    <Card sx={{ aspectRatio: '1/1.1' }}>
-      <CardMedia sx={{ height: '50%' }} image={imageUrl} />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+    <Card className={styles.cardRoot} sx={{ bgcolor: 'background.card' }}>
+      {imageUrl && <CardMedia className={styles.cardMedia} image={imageUrl} />}
+      <CardContent className={styles.cardContent}>
+        <Typography gutterBottom variant="inherit" component="div" sx={{ fontWeight: 'bold' }}>
           {title}
         </Typography>
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '.5em' }}>
-          <Typography variant="body1" component="div">
+          <Typography variant="body2" component="div">
             {company}
           </Typography>
-          <Typography variant="body1" color="text.secondary" sx={{ fontSize: '1em' }}>
+          <Typography variant="body2" color="text.secondary" sx={{ fontSize: '.7em' }}>
             {period}
           </Typography>
         </Box>
         <Typography
-          className={styles.cardDescription}
+          className={`${styles.cardDescription} ${!imageUrl && styles.noImage}`}
           variant="body2"
           color="text.secondary"
-          sx={{ fontSize: '.7rem' }}
+          sx={{ fontSize: '.8rem' }}
         >
           {description}
         </Typography>
