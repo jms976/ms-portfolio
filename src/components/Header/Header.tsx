@@ -38,7 +38,7 @@ const Header = () => {
       <Box>
         <Typography
           className={styles.mainTitle}
-          sx={{ color: 'color.title', fontFamily: 'monospace' }}
+          sx={{ color: 'color.title', fontFamily: 'monospace', fontSize: '1.2rem' }}
           component="pre"
           variant="h6"
         >

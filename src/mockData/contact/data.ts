@@ -5,6 +5,6 @@ export const ContactData = [
     address: '서울시 마포구 도화동',
     cell: '01033719178',
     resume: '/assets/pdf/resume.pdf',
-    resumeName: '이력서_장명수_FE_Developer',
+    resumeName: '이력서_장명수(FE developer)',
   },
 ];

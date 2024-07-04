@@ -15,10 +15,14 @@ const Contact = () => {
     <Paper
       variant="outlined"
       className={styles.root}
-      sx={{ height: { xs: 'calc(100vh - 236px)', sm: 'calc(100vh - 268px)', md: 'auto' } }}
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        height: { xs: 'calc(100vh - 236px)', sm: 'calc(100vh - 268px)', md: 'auto' },
+      }}
     >
-      <Typography sx={{ fontWeight: 'bold', fontSize: '1.3rem' }}>CONTACT</Typography>
-      <Box className={styles.contact} sx={{ margin: { xs: '50px auto', md: '100px auto' } }}>
+      <Typography sx={{ fontWeight: 'bold', fontSize: '1.2rem', color: 'color.title' }}>CONTACT ME</Typography>
+      <Box className={styles.contact} sx={{ margin: 'auto' }}>
         <List>
           <ListItem
             className={`${theme.palette.mode === 'dark' ? styles.contactDarkItem : styles.contactLightItem}`}
@@ -32,7 +36,7 @@ const Contact = () => {
               primary="E-mail"
               secondary={data?.email ?? '-'}
               primaryTypographyProps={{ color: 'color.iconText', fontSize: '20px' }}
-              secondaryTypographyProps={{ color: 'color.icon', fontSize: '18px' }}
+              secondaryTypographyProps={{ color: 'color.icon', fontSize: '16px' }}
             />
           </ListItem>
           <ListItem
@@ -48,7 +52,7 @@ const Contact = () => {
               primary="Adress"
               secondary={data?.address ?? '-'}
               primaryTypographyProps={{ color: 'color.iconText', fontSize: '20px' }}
-              secondaryTypographyProps={{ color: 'color.icon', fontSize: '18px' }}
+              secondaryTypographyProps={{ color: 'color.icon', fontSize: '16px' }}
             />
           </ListItem>
           <ListItem
@@ -63,7 +67,7 @@ const Contact = () => {
               primary="Cell"
               secondary={data?.cell ?? '-'}
               primaryTypographyProps={{ color: 'color.iconText', fontSize: '20px' }}
-              secondaryTypographyProps={{ color: 'color.icon', fontSize: '18px' }}
+              secondaryTypographyProps={{ color: 'color.icon', fontSize: '16px' }}
             />
           </ListItem>
           <ListItem
@@ -78,9 +82,9 @@ const Contact = () => {
             </ListItemIcon>
             <ListItemText
               primary="Resume"
-              secondary={`${data?.resumeName}.pdf` ?? '-'}
+              secondary={`${data?.resumeName ?? '-'}.pdf`}
               primaryTypographyProps={{ color: 'color.iconText', fontSize: '20px' }}
-              secondaryTypographyProps={{ color: 'color.icon', fontSize: '18px' }}
+              secondaryTypographyProps={{ color: 'color.icon', fontSize: '16px' }}
             />
           </ListItem>
         </List>

@@ -21,24 +21,24 @@ export const AboutData = [
         imageUrl: '/assets/images/skill/jses6.webp',
       },
       {
-        name: 'MUI',
-        imageUrl: '/assets/images/skill/mui.webp',
-      },
-      {
-        name: 'eCharts',
-        imageUrl: '/assets/images/skill/echarts.webp',
-      },
-      {
-        name: 'Ant',
-        imageUrl: '/assets/images/skill/ant.webp',
-      },
-      {
         name: 'Storybook',
         imageUrl: '/assets/images/skill/storybook.webp',
       },
       {
         name: 'React-Query',
         imageUrl: '/assets/images/skill/react-query.webp',
+      },
+      {
+        name: 'Redux',
+        imageUrl: '/assets/images/skill/redux.webp',
+      },
+      {
+        name: 'zustand',
+        imageUrl: '/assets/images/skill/zustand.webp',
+      },
+      {
+        name: 'MUI',
+        imageUrl: '/assets/images/skill/mui.webp',
       },
       {
         name: 'Styled-Component',
@@ -49,12 +49,12 @@ export const AboutData = [
         imageUrl: '/assets/images/skill/vanilla-extract.webp',
       },
       {
-        name: 'Redux',
-        imageUrl: '/assets/images/skill/redux.webp',
+        name: 'eCharts',
+        imageUrl: '/assets/images/skill/echarts.webp',
       },
       {
-        name: 'zustand',
-        imageUrl: '/assets/images/skill/zustand.webp',
+        name: 'Antd',
+        imageUrl: '/assets/images/skill/ant.webp',
       },
       {
         name: 'NodeJS',
