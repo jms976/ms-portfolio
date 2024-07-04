@@ -2,7 +2,7 @@ import { Divider, Paper, Typography, Box } from '@mui/material';
 import { useOutletContext } from 'react-router-dom';
 
 import { AboutData } from '../../mockData/about/data';
-import Skills from '../../components/Skills/Skills';
+import { Skills } from '../../components/Skills';
 import styles from './About.module.css';
 
 const About = () => {
