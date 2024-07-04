@@ -38,8 +38,8 @@
 }
 
 .subTitle {
-  font-size: .7em !important;
+  font-size: .7em;
   font-weight: 800;
-  letter-spacing: .25em !important;
-  margin-bottom: 2em !important;
+  letter-spacing: .25em;
+  margin-bottom: 2em;
 }

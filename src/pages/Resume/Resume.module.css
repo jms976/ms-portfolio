@@ -4,6 +4,6 @@
 }
 
 .downButton {
-  position: fixed !important;
+  position: fixed;
   z-index: 1;
 }
