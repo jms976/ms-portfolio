@@ -75,7 +75,7 @@ export const ProjectData: ProjectDataType[] = [
         period: '2020.04 - 2022.11',
         company: '엠비아이솔루션',
         description:
-          '- 프로젝트 설명\n챗봇 에디터를 통해 만들어진 챗봇 블록들을 End-User 채팅창에 전송\nEnd-User 사용자가 발화한 채팅을 바탕으로 서버에 저장및 새로운 블록 전송\n\n- 담당업무\n주로 메인 서버개발자가 개발한 소스에서 API추가 및 운영에 쓰이는 특수한 기능을 추가 개발\n새로 생성된 데이터의 스키마 생성\n(봇 사용시 변수 생성하여 저장, 변수의 조건에 따라 블록을 분기하는 로직 개발)\n\n-사용기술\nJavascript, Typescript, Mongodb, Express',
+          '- 프로젝트 설명\n챗봇 에디터를 통해 만들어진 챗봇 블록들을 End-User 채팅창에 전송\nEnd-User 사용자가 발화한 채팅을 바탕으로 서버에 저장및 새로운 블록 전송\n\n- 담당업무\n주로 메인 서버개발자가 개발한 소스에서 API추가 및 운영에 쓰이는 특수한 기능을 추가 개발 \n새로 생성된 데이터의 스키마 생성\n(봇 사용시 변수 생성하여 저장, 변수의 조건에 따라 블록을 분기하는 로직 개발)\n\n-사용기술\nJavascript, Typescript, Mongodb, Express',
         images: [
           {
             url: '/assets/images/project/chat1.webp',
@@ -94,7 +94,7 @@ export const ProjectData: ProjectDataType[] = [
         period: '2022.04 - 2022.10',
         company: '엠비아이솔루션',
         description:
-          '- 프로젝트 설명\n챗봇 진행중 url로 설문지 링크 제공, 에디터에서 설문지 제작 및 설문지 통계활용\n\n- 담당업무\n설문지 내용을 넣을 수 있는 시나리오 커스텀 진행\n설문지를 실제 서버에서 전환 할 수 있는 링크로 변경 설문완료시 서버를 통해 DB에 저장\n저장된 내용으로 실 사용자가 문답한 내용 및 통계 화면으로 출력\\nn- 사용기술\n언어 : Javascript, Typescript, HTML, CSS, MongoDB\n프래임워크 : React, Redux-Toolkit, React-Query, styled-components, Express',
+          '- 프로젝트 설명\n챗봇 진행중 url로 설문지 링크 제공, 에디터에서 설문지 제작 및 설문지 통계활용\n\n- 담당업무\n설문지 내용을 넣을 수 있는 시나리오 커스텀 진행\n설문지를 실제 서버에서 전환 할 수 있는 링크로 변경 설문완료시 서버를 통해 DB에 저장\n저장된 내용으로 실 사용자가 문답한 내용 및 통계 화면으로 출력\n\n- 사용기술\n언어 : Javascript, Typescript, HTML, CSS, MongoDB\n프래임워크 : React, Redux-Toolkit, React-Query, styled-components, Express',
         images: [
           {
             url: '/assets/images/project/survey1.webp',
@@ -116,7 +116,7 @@ export const ProjectData: ProjectDataType[] = [
         period: '2021.08 - 2022.11',
         company: '엠비아이솔루션',
         description:
-          '- 프로젝트 설명\n챗봇 에디터를 사용하는 고객들을 관리할 백오피스 제작\n사용자 설정 및 에디터 블록형태 생성\n\n- 담당업무\n서버 및 프론트 전반적으로 기획 단계부터 제작\n\n- 사용기술 : Javascript, Typescript, HTML, CSS, MongoDB, React, Redux-Toolkit, React-Query, styled-components, Express, Google Oauth',
+          '- 프로젝트 설명\n챗봇 에디터를 사용하는 고객들을 관리할 백오피스 제작 사용자 설정 및 에디터 블록형태 생성\n\n- 담당업무\n서버 및 프론트 전반적으로 기획 단계부터 제작\n\n- 사용기술 : Javascript, Typescript, HTML, CSS, MongoDB, React, Redux-Toolkit, React-Query, styled-components, Express, Google Oauth',
         images: [
           {
             url: '/assets/images/project/back1.webp',
@@ -131,68 +131,56 @@ export const ProjectData: ProjectDataType[] = [
         ],
       },
       {
-        title: '발전소 모니터링',
-        period: '2022.11 - 2024.06',
-        company: '원프레딕트',
+        title: 'APM 알림 메시지 및 리포트 전송 시스템 개발',
+        period: '2020.01 - 2020.04',
+        company: '에임투지',
         description:
-          '발전소에 들어가는 대형터빈의 데이터와 차트 및 이미지를 React로 화면에 렌더링 \n산업 발전소에 현장 특수한 상황을 고려하여 기획에 맞게 개발 했습니다.\n각종 차트들을 고객과 PM의 요구사항에 맞게 개발\n레거시 코드를 서버드리븐UI로 화면 Layout \n에 대한 JSON을 백엔드 팀에게 제공하고 그에 맞는 화면을 개발 하였습니다.\nLayout에 맞는 데이터를 number 코드로 된 ID를 모아서 서버에 요청을 보내서\nLayout 내부의 데이터를 효과적으로 갱신할 수 있게 개발 하였습니다.',
+          '- 프로젝트 설명\n경보 : APM 서버의 특정 상태 값을 설정하여 그 규칙을 위반했을 때, NodeJS 서버를 이용하여 외부 Email 전송\n리포트: 메인 서버에서 특정시간에 전송된 데이터를 이용해 NodeJS 서버로 PDF로 리포트 생성하고 Email 전송\n\n- 담당업무\n브라우져 없이 NodeJS 서버로 받은 데이터를 화면을 생성하고 메일로 전송\n\n- 사용기술\nNodeJS, Javascript, HTML, CSS, AngularJS',
         images: [
           {
-            url: '/assets/images/project/turbo1.webp',
+            url: '/assets/images/project/alarm1.webp',
             thumbnail: true,
           },
           {
-            url: '/assets/images/project/turbo2.webp',
+            url: '/assets/images/project/alarm2.webp',
           },
           {
-            url: '/assets/images/project/turbo3.webp',
-          },
-          {
-            url: '/assets/images/project/turbo4.webp',
+            url: '/assets/images/project/alarm3.webp',
           },
         ],
       },
       {
-        title: '발전소 모니터링',
-        period: '2022.11 - 2024.06',
-        company: '원프레딕트',
+        title: 'APM 시스템 커스텀 대시보드 개발',
+        period: '22019.08 - 2020.01',
+        company: '에임투지',
         description:
-          '발전소에 들어가는 대형터빈의 데이터와 차트 및 이미지를 React로 화면에 렌더링 \n산업 발전소에 현장 특수한 상황을 고려하여 기획에 맞게 개발 했습니다.\n각종 차트들을 고객과 PM의 요구사항에 맞게 개발\n레거시 코드를 서버드리븐UI로 화면 Layout \n에 대한 JSON을 백엔드 팀에게 제공하고 그에 맞는 화면을 개발 하였습니다.\nLayout에 맞는 데이터를 number 코드로 된 ID를 모아서 서버에 요청을 보내서\nLayout 내부의 데이터를 효과적으로 갱신할 수 있게 개발 하였습니다.',
+          '- 프로젝트 설명\nAPM 데이터를 이용하여 대시보드를 사용자가 직접 구성하여 모니터링 할 수 있게 설정 및 모니터링 페이지 개발\n\n- 담당업무\n화면 위에 드래그앤 드롭으로 차트들을 이동 할 수 있게 하는 모듈 찾고, 각종 차트 구현 및 설정\n페이지 구성\n\n-사용기술\nJavascript, HTML, CSS, AngularJS',
         images: [
           {
-            url: '/assets/images/project/turbo1.webp',
+            url: '/assets/images/project/custom1.webp',
+          },
+          {
+            url: '/assets/images/project/custom2.webp',
+          },
+          {
+            url: '/assets/images/project/custom3.gif',
             thumbnail: true,
-          },
-          {
-            url: '/assets/images/project/turbo2.webp',
-          },
-          {
-            url: '/assets/images/project/turbo3.webp',
-          },
-          {
-            url: '/assets/images/project/turbo4.webp',
           },
         ],
       },
       {
-        title: '발전소 모니터링',
-        period: '2022.11 - 2024.06',
-        company: '원프레딕트',
+        title: 'AWS, Lambda 모니터링 시스템 개발',
+        period: '2019.01 - 2019.06',
+        company: '에임투지',
         description:
-          '발전소에 들어가는 대형터빈의 데이터와 차트 및 이미지를 React로 화면에 렌더링 산업 발전소에 현장 특수한 상황을 고려하여 기획에 맞게 개발 했습니다.\n각종 차트들을 고객과 PM의 요구사항에 맞게 개발\n레거시 코드를 서버드리븐UI로 화면 Layout \n에 대한 JSON을 백엔드 팀에게 제공하고 그에 맞는 화면을 개발 하였습니다.\nLayout에 맞는 데이터를 number 코드로 된 ID를 모아서 서버에 요청을 보내서\nLayout 내부의 데이터를 효과적으로 갱신할 수 있게 개발 하였습니다.',
+          '- 프로젝트 설명\nAPM 애플리케이션 모니터링의 추가적으로 AWS 성능을 모니터링을 하기 위해 NodeJS를 사용하여\n서버를 구축하고 AWS SDK에서 데이터를 받아오고 중심 프로세스(c언어)로 보내서 Admin 화면에서 모니터링을 하는 프로젝트\n\n- 담당업무\nNodeJS 서버로 데이터를 가져오고 가져온 데이터를 모니터링 화면을 구성하는 full-stack 업무 \nAWS의 EC2및 Lambda 로그 및 데이터를 화면에 구성\n\n- 사용기술\nNodeJS, Javascript, AWS CLI, HTML, CSS, AngularJS',
         images: [
           {
-            url: '/assets/images/project/turbo1.webp',
+            url: '/assets/images/project/aws1.webp',
             thumbnail: true,
           },
           {
-            url: '/assets/images/project/turbo2.webp',
-          },
-          {
-            url: '/assets/images/project/turbo3.webp',
-          },
-          {
-            url: '/assets/images/project/turbo4.webp',
+            url: '/assets/images/project/aws2.webp',
           },
         ],
       },
