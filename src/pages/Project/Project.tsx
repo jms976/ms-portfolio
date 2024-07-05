@@ -1,13 +1,26 @@
 import { useOutletContext } from 'react-router-dom';
-import { Paper, Typography, Box } from '@mui/material';
+import { Paper, Typography, Box, Dialog } from '@mui/material';
 
 import { ProjectCard } from '../../components/ProjectCard';
 import styles from './Project.module.css';
 import { ProjectData } from '../../mockData/project/data';
+import { useState } from 'react';
 
 const Project = () => {
   const portfoiliId = useOutletContext();
   const data = ProjectData.find((item) => item.id === portfoiliId);
+
+  const [detailOpen, setDetailOpen] = useState(false);
+  const [targetImages, setTargetImages] = useState<string[]>([]);
+
+  const openDetailDialog = (images: { url: string; thumbnail?: boolean }[]) => () => {
+    setTargetImages(images.map((item) => item.url));
+    setDetailOpen(true);
+  };
+
+  const handleClose = () => {
+    setDetailOpen(false);
+  };
 
   return (
     <Paper variant="outlined" className={styles.root}>
@@ -32,45 +45,23 @@ const Project = () => {
             <ProjectCard
               key={index}
               imageUrl={images.find((image) => image.thumbnail)?.url ?? images.at(0)?.url}
+              onClick={openDetailDialog(images)}
               {...rest}
             />
           ))}
-        {/* <ProjectCard
-          imageUrl="/assets/images/skill/react-query.webp"
-          title="test"
-          period="2022.01.01 - 2024.01.01"
-          company="noPredict"
-          description="그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거 "
-        />
-        <ProjectCard
-          imageUrl="/assets/images/skill/express.webp"
-          title="test"
-          period="2022.01.01 - 2024.01.01"
-          company="noPredict"
-          description="그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거 "
-        />
-        <ProjectCard
-          imageUrl="/assets/images/skill/redux.webp"
-          title="test"
-          period="2022.01.01 - 2024.01.01"
-          company="noPredict"
-          description="그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거 "
-        />
-        <ProjectCard
-          imageUrl="/assets/images/skill/storybook.webp"
-          title="test"
-          period="2022.01.01 - 2024.01.01"
-          company="noPredict"
-          description="그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거 "
-        />
-        <ProjectCard
-          imageUrl="/assets/images/skill/react.webp"
-          title="test"
-          period="2022.01.01 - 2024.01.01"
-          company="noPredict"
-          description="그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거그냥 할일 없어 만든거 "
-        /> */}
       </Box>
+
+      <Dialog open={detailOpen} onClose={handleClose} scroll="paper">
+        {targetImages}
+        {[...new Array(50)]
+          .map(
+            () => `Cras mattis consectetur purus sit amet fermentum.
+Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`,
+          )
+          .join('\n')}
+      </Dialog>
     </Paper>
   );
 };

@@ -1,6 +1,7 @@
 import { Box, Card, CardContent, CardMedia, Typography } from '@mui/material';
 
 import styles from './ProjectCard.module.css';
+import { MouseEventHandler } from 'react';
 
 type ProjectCardProps = {
   imageUrl?: string;
@@ -8,17 +9,14 @@ type ProjectCardProps = {
   period: string;
   company: string;
   description: string;
-  detail?: {
-    imageUrlList: string[];
-    descriptionList: string[];
-  };
+  onClick?: MouseEventHandler;
 };
 
 const ProjectCard = (props: ProjectCardProps) => {
-  const { imageUrl, title, company, period, description } = props;
+  const { imageUrl, title, company, period, description, onClick } = props;
 
   return (
-    <Card className={styles.cardRoot} sx={{ bgcolor: 'background.card' }}>
+    <Card className={styles.cardRoot} sx={{ bgcolor: 'background.card' }} onClick={onClick}>
       {imageUrl && <CardMedia className={styles.cardMedia} image={imageUrl} />}
       <CardContent className={styles.cardContent}>
         <Typography gutterBottom variant="inherit" component="div" sx={{ fontWeight: 'bold' }}>

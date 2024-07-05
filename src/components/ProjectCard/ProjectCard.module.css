@@ -4,9 +4,16 @@
   flex-direction: column;
 }
 
+.cardRoot:hover {
+  opacity: 0.5;
+  background: var(--color-gray-2);
+  cursor: pointer;
+}
+
 .cardMedia {
   height: 100%;
 }
+
 
 .cardContent {
   display: flex;
