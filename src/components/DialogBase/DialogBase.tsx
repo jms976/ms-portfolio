@@ -1,8 +1,9 @@
 import { PropsWithChildren } from 'react';
-import { Button, Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material';
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, IconButton } from '@mui/material';
 import { DialogProps } from '@mui/material/Dialog';
 
 import styles from './DialogBase.module.css';
+import { Close } from '@mui/icons-material';
 
 type ButtonType = {
   text: string;
@@ -15,16 +16,33 @@ type DialogBaseProps = {
   visable?: boolean;
   primaryButton?: ButtonType;
   secondaryButton?: ButtonType;
+  isCloseButton?: boolean;
 } & Omit<DialogProps, 'open'>;
 
 const DialogBase = (props: PropsWithChildren<DialogBaseProps>) => {
-  const { title, visable = false, scroll, className, primaryButton, secondaryButton, children, ...rest } = props;
+  const {
+    title,
+    scroll,
+    className,
+    primaryButton,
+    secondaryButton,
+    children,
+    onClose,
+    visable = false,
+    isCloseButton = true,
+    ...rest
+  } = props;
 
   return (
     <Dialog open={visable} scroll={scroll} PaperProps={{ className: `${className} ${styles.root}` }} {...rest}>
       {title && (
-        <DialogTitle id="dialog-title" sx={{ fontSize: { xs: '1em', md: '1.3em' } }}>
+        <DialogTitle id="dialog-title" className={styles.dialogTitle} sx={{ fontSize: { xs: '1em', md: '1.3em' } }}>
           {title}
+          {isCloseButton && (
+            <IconButton onClick={(event) => onClose?.(event, 'backdropClick')}>
+              <Close />
+            </IconButton>
+          )}
         </DialogTitle>
       )}
       <DialogContent>{children}</DialogContent>

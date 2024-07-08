@@ -1,3 +1,9 @@
 .root {
   min-height: 500px;
 }
+
+.dialogTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
