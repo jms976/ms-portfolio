@@ -3,7 +3,7 @@ import { Box, Card, CardContent, CardMedia, Typography } from '@mui/material';
 import styles from './ProjectCard.module.css';
 import { MouseEventHandler } from 'react';
 
-type ProjectCardProps = {
+export type ProjectCardProps = {
   imageUrl?: string;
   title: string;
   period: string;

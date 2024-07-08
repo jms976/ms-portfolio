@@ -45,7 +45,7 @@ export const ProjectData: ProjectDataType[] = [
         period: '2023.12 - 2024.06',
         company: '원프레딕트',
         description:
-          '- 프로젝트 설명 \n디자이너가 피그마로 컴포넌트를 만들면 토큰을 통해 컴포넌트 개발 \n\n-담당업무\nPopover, Tooltip, List, Menu, Loading 라이브러리 없이 개발\n리스트나 메뉴의 경우 사용자가 여러 Depth로 된 메뉴를 키보드 방향키로 움직일 수 있게 UX\n생각하여 개발 하였습니다.\n팝오버나 툴팁의 경우, 스크롤과 리사이즈를 고려 하여 개발 하였고, 화면 끝에 닿았을때 플립이 되게 개발 하였습니다.\n\n- 사용기술\nReact, Typescript, Vite, vanilla-extract, MUI',
+          '- 프로젝트 설명 \n디자이너가 피그마로 컴포넌트를 만들면 토큰을 통해 컴포넌트 개발 \n\n-담당업무\nPopover, Tooltip, List, Menu, Loading 라이브러리 없이 개발\n리스트나 메뉴의 경우 사용자가 여러 Depth로 된 메뉴를 키보드 방향키로 움직일 수 있게 UX를 생각하여 개발 하였습니다.\n팝오버나 툴팁의 경우, 스크롤과 리사이즈를 고려 하여 개발 하였고, 화면 끝에 닿았을때 플립이 되게 개발 하였습니다.\n\n- 사용기술\nReact, Typescript, Vite, vanilla-extract, MUI',
         images: [],
       },
       {

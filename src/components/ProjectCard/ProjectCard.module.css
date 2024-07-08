@@ -6,7 +6,7 @@
 
 .cardRoot:hover {
   opacity: 0.5;
-  background: var(--color-gray-2);
+  /* background: var(--color-gray-2); */
   cursor: pointer;
 }
 

@@ -1,25 +1,29 @@
+import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
-import { Paper, Typography, Box, Dialog } from '@mui/material';
+import { Paper, Typography, Box } from '@mui/material';
 
 import { ProjectCard } from '../../components/ProjectCard';
-import styles from './Project.module.css';
 import { ProjectData } from '../../mockData/project/data';
-import { useState } from 'react';
+import { DialogBase } from '../../components/DialogBase';
+import { ProjectCardProps } from '../../components/ProjectCard/ProjectCard';
+
+import styles from './Project.module.css';
+import { Carousel } from '../../components/Carousel';
+
+type DetailTypes = {
+  images: string[];
+} & Omit<ProjectCardProps, 'onClick' | 'imgUrl'>;
 
 const Project = () => {
   const portfoiliId = useOutletContext();
   const data = ProjectData.find((item) => item.id === portfoiliId);
 
   const [detailOpen, setDetailOpen] = useState(false);
-  const [targetImages, setTargetImages] = useState<string[]>([]);
+  const [targetProject, setTargetProject] = useState<DetailTypes>();
 
-  const openDetailDialog = (images: { url: string; thumbnail?: boolean }[]) => () => {
-    setTargetImages(images.map((item) => item.url));
+  const openDetailDialog = (project: DetailTypes) => () => {
+    setTargetProject(project);
     setDetailOpen(true);
-  };
-
-  const handleClose = () => {
-    setDetailOpen(false);
   };
 
   return (
@@ -45,23 +49,21 @@ const Project = () => {
             <ProjectCard
               key={index}
               imageUrl={images.find((image) => image.thumbnail)?.url ?? images.at(0)?.url}
-              onClick={openDetailDialog(images)}
+              onClick={openDetailDialog({
+                images: images.map((image) => image.url),
+                ...rest,
+              })}
               {...rest}
             />
           ))}
       </Box>
 
-      <Dialog open={detailOpen} onClose={handleClose} scroll="paper">
-        {targetImages}
-        {[...new Array(50)]
-          .map(
-            () => `Cras mattis consectetur purus sit amet fermentum.
-Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`,
-          )
-          .join('\n')}
-      </Dialog>
+      <DialogBase title={targetProject?.title} visable={detailOpen} onClose={() => setDetailOpen(false)} scroll="paper">
+        {!!targetProject?.images.length && <Carousel images={targetProject.images} />}
+        <Typography className={styles.detailContent} component="pre" sx={{ fontSize: { xs: '.8em', md: '1em' } }}>
+          {targetProject?.description}
+        </Typography>
+      </DialogBase>
     </Paper>
   );
 };
