@@ -24,7 +24,7 @@ const getDesignTokens = (mode: PaletteMode) => ({
           color: {
             typography: tokens.color.gray2,
             content: tokens.color.gray5,
-            active: tokens.color.lime9,
+            active: tokens.color.cyan9,
             title: tokens.color.gray0,
             text: tokens.color.gray9,
             icon: tokens.color.cyan9,

@@ -77,5 +77,27 @@ export const AboutData = [
         imageUrl: '/assets/images/skill/jest.webp',
       },
     ],
+    career: [
+      {
+        company: '원프레딕트',
+        role: 'Frontend Developer',
+        period: '2022.11 ~ 2024.07',
+      },
+      {
+        company: '엠비아이솔루션',
+        role: '챗봇 Developer(react, node)',
+        period: '2020.04 ~ 2022.11',
+      },
+      {
+        company: '에임투지',
+        role: 'APM 솔루션 Developer',
+        period: '2019.01 ~ 2020.04',
+      },
+      {
+        company: '에임투지',
+        role: '순번대기 솔루션 필드 엔지니어',
+        period: '2014.12 ~ 2019.01',
+      },
+    ],
   },
 ];
