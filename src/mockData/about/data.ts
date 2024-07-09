@@ -2,7 +2,7 @@ export const AboutData = [
   {
     id: 1,
     introduceText:
-      '안녕하세요. \n프론트앤드 개발자 장명수 입니다. \n\n저는 현재 FrontEnd 직군에서 프로젝트를 진행 하고 있습니다. \n저의 기술 스택은 Typescript과 React를 기반합니다. \n\nFrontend 및 Backend 직군으로 프로젝트를 진행한 경력이 있습니다. \n현재는 대형 Turbine 모니터링을 위한 화면 개발 프로젝트를 진행 중입니다. \n기술 트렌드와 실제 프로덕션의 중간에서 효율점을 찾아가며 하루하루 발전해 나가고 있습니다. \n\n잘 부탁드립니다.',
+      '안녕하세요, 저는 프론트엔드 개발자 장명수입니다. \n\n저는 Typescript와 React를 기반으로 다양한 프로젝트를 성공적으로 이끌어온 경험이 있습니다. \n현재는 대형 Turbine 모니터링 화면 개발 프로젝트를 주도하고 있으며, \n기술 트렌드와 실제 프로덕션 환경 사이의 효율적인 솔루션을 찾기 위해 노력하고 있습니다. \n\nFrontend와 Backend 직군에서의 다양한 경험을 통해 전체 시스템의 이해를 깊이 있게 할 수 있습니다. \n항상 최신 기술과 최상의 방법론을 통해 프로젝트를 진행하며, 지속적인 성장을 추구합니다. \n\n저의 열정과 경험을 바탕으로 팀에 기여하고, 함께 성장하는 기회를 기대합니다. \n감사합니다.',
     skills: [
       {
         name: 'Typescript',
@@ -71,6 +71,10 @@ export const AboutData = [
       {
         name: 'Github',
         imageUrl: '/assets/images/skill/github.webp',
+      },
+      {
+        name: 'Jest',
+        imageUrl: '/assets/images/skill/jest.webp',
       },
     ],
   },
