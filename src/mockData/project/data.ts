@@ -151,7 +151,7 @@ export const ProjectData: ProjectDataType[] = [
       },
       {
         title: 'APM 시스템 커스텀 대시보드 개발',
-        period: '22019.08 - 2020.01',
+        period: '22019.01 - 2020.01',
         company: '에임투지',
         description:
           '- 프로젝트 설명\nAPM 데이터를 이용하여 대시보드를 사용자가 직접 구성하여 모니터링 할 수 있게 설정 및 모니터링 페이지 개발\n\n- 담당업무\n화면 위에 드래그앤 드롭으로 차트들을 이동 할 수 있게 하는 모듈 찾고, 각종 차트 구현 및 설정\n페이지 구성\n\n-사용기술\nJavascript, HTML, CSS, AngularJS',
@@ -170,7 +170,7 @@ export const ProjectData: ProjectDataType[] = [
       },
       {
         title: 'AWS, Lambda 모니터링 시스템 개발',
-        period: '2019.01 - 2019.06',
+        period: '2017.09 - 2018.03',
         company: '에임투지',
         description:
           '- 프로젝트 설명\nAPM 애플리케이션 모니터링의 추가적으로 AWS 성능을 모니터링을 하기 위해 NodeJS를 사용하여\n서버를 구축하고 AWS SDK에서 데이터를 받아오고 중심 프로세스(c언어)로 보내서 Admin 화면에서 모니터링을 하는 프로젝트\n\n- 담당업무\nNodeJS 서버로 데이터를 가져오고 가져온 데이터를 모니터링 화면을 구성하는 full-stack 업무 \nAWS의 EC2및 Lambda 로그 및 데이터를 화면에 구성\n\n- 사용기술\nNodeJS, Javascript, AWS CLI, HTML, CSS, AngularJS',
