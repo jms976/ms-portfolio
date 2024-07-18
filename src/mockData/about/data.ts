@@ -91,12 +91,12 @@ export const AboutData = [
       {
         company: '에임투지',
         role: 'APM 솔루션 Developer',
-        period: '2019.01 ~ 2020.04',
+        period: '2017.09 ~ 2020.04',
       },
       {
         company: '에임투지',
         role: '순번대기 솔루션 필드 엔지니어',
-        period: '2014.12 ~ 2019.01',
+        period: '2014.12 ~ 2017.09',
       },
     ],
   },
