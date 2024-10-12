@@ -7,6 +7,7 @@ import { About } from '../pages/About';
 import { Contact } from '../pages/Contact';
 import { Project } from '../pages/Project';
 import { Resume } from '../pages/Resume';
+import { ContactScene } from '../pages/ContactScene';
 
 export type RouteConfig = Omit<RouteObject, 'children'> & {
   children?: RouteConfig[];
@@ -40,6 +41,12 @@ export const routes: RouteConfig[] = [
     id: 'contact',
     path: 'contact',
     element: <Contact />,
+  },
+  {
+    id: 'scene',
+    path: 'scene',
+    element: <ContactScene />,
+    hideNav: true,
   },
 ];
 
