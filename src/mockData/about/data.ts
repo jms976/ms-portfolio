@@ -1,9 +1,35 @@
 export const AboutData = [
   {
     id: 1,
-    introduceText:
-      '안녕하세요, 저는 프론트엔드 개발자 장명수입니다. \n\n저는 Typescript와 React를 기반으로 다양한 프로젝트를 성공적으로 이끌어온 경험이 있습니다. \n현재는 대형 Turbine 모니터링 화면 개발 프로젝트를 주도하고 있으며, \n기술 트렌드와 실제 프로덕션 환경 사이의 효율적인 솔루션을 찾기 위해 노력하고 있습니다. \n\nFrontend와 Backend 직군에서의 다양한 경험을 통해 전체 시스템의 이해를 깊이 있게 할 수 있습니다. \n항상 최신 기술과 최상의 방법론을 통해 프로젝트를 진행하며, 지속적인 성장을 추구합니다. \n\n저의 열정과 경험을 바탕으로 팀에 기여하고, 함께 성장하는 기회를 기대합니다. \n감사합니다.',
+    introduceText: `안녕하세요,저는 9년 이상 프론트엔드 개발 경력을 보유한 개발자로, \n최신 기술 도입과 팀 내 표준화 작업을 통해 서비스 품질과 생산성을 높여왔습니다.\n
+최근에는 AI 기반 보안 이상징후 관제 솔루션의 프론트엔드를 담당했습니다. \nNext.js와 TypeScript를 기반으로 안정적인 개발 환경을 구축하고, \nReact Hook Form + Zod로 폼 검증을 체계화하고 코드 매핑 처리로 UI 렌더링 구조를 최적화했습니다. \n이 과정에서 팀 내 TypeScript를 본격적으로 도입하여 유지보수성과 안정성을 강화했습니다.
+동시에 shadcn/ui + Tailwind v4 기반의 디자인 시스템을 리드하며 조직 내 개발 효율성을 높였습니다. \n
+저는 단순히 화면을 구현하는 것을 넘어, \n최신 기술과 기존 레거시를 조화시키고 현대화하여 안정적이고 효율적인 UI/UX를 제공하는 프론트엔드 개발자입니다. \n또한 사용자 경험을 최우선으로 고려하며, 개발자 편의보다 제품 완성도 향상에 집중합니다. \n앞으로도 Next.js를 기반으로 효율적이면서 혁신적인 UI/UX를 설계하고 구현하는 데 주력하고자 합니다.`,
     skills: [
+      {
+        name: 'Next.js',
+        imageUrl: '/assets/images/skill/next.webp',
+      },
+      {
+        name: 'Shadcn/ui',
+        imageUrl: '/assets/images/skill/shadcn.webp',
+      },
+      {
+        name: 'Tailwind',
+        imageUrl: '/assets/images/skill/tailwind.webp',
+      },
+      {
+        name: 'React Hook Form',
+        imageUrl: '/assets/images/skill/rhf.webp',
+      },
+      {
+        name: 'Zod',
+        imageUrl: '/assets/images/skill/zod.webp',
+      },
+      {
+        name: 'pnpm',
+        imageUrl: '/assets/images/skill/pnpm.webp',
+      },
       {
         name: 'Typescript',
         imageUrl: '/assets/images/skill/typescript.webp',

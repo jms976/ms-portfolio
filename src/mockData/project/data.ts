@@ -19,6 +19,39 @@ export const ProjectData: ProjectDataType[] = [
     id: 1,
     projects: [
       {
+        title: 'AI 이상징후 탐지 프론트엔드 개발',
+        period: '2024.09 - 2025.05',
+        company: '제이슨시스템',
+        description:
+          '- 프로젝트 설명 \nAI 기반 보안 이상징후 관제 솔루션의 프론트엔드를 담당했습니다. Next.js와 TypeScript를 기반으로 안정적인 개발 환경을 구축하고, React Hook Form + Zod로 폼 검증을 체계화했습니다. 또한 Apache ECharts와 D3.js를 활용해 보안 로그 및 이상 탐지 데이터를 직관적으로 시각화했으며, 코드 매핑 처리로 UI 렌더링 구조를 최적화했습니다.\n\n- 담당업무\n코드 매핑 처리 및 TypeScript 기반 개발 환경 정착, 폼 검증 기능 구현, ECharts 및 D3.js 차트 개발, 유지보수 및 운영 환경 개선\n\n- 사용기술\nReact, Next.js 12, TypeScript, React Hook Form, Zod, Apache ECharts, D3.js, Zustand, CSS Modules',
+        images: [],
+      },
+      {
+        title: '디자인 시스템 개발(shadcn/ui,Tailwind v4)',
+        period: '2025.05 - 2025.09',
+        company: '제이슨시스템',
+        description:
+          '- 프로젝트 설명 \nshadcn/ui와 Tailwind v4를 기반으로 디자인 토큰 중심의 일관된 UI 체계를 구축했습니다. 모노레포(pnpm/Turborepo) 환경에서 공통 패키지를 관리하여 여러 프로젝트에서 재사용 가능하도록 설계했습니다.\n\n- 담당업무\n디자인 토큰 설계 및 관리, shadcn/ui 기반 커스텀 컴포넌트 개발 및 라이브러리화, 문서화, 코드 리뷰, 팀 온보딩\nTailwind 유틸리티 기반 공통 스타일 가이드 수립 및 적용\n\n - 사용기술\nReact, TypeScript, Vite, shadcn/ui, Tailwind v4, 디자인 토큰 아키텍처, Monorepo(pnpm/Turborepo)\n\n -생성한 컴포넌트 목록:\nButton, Toggle, Checkbox, Input, InputOTP, RadioGroup, Switch, Slider, Textarea, Autocomplete, MultiSelect, Select, DropdownMenu, Sidebar, Tabs, Separator, AlertDialog, Dialog, HoverCard, Popover, Tooltip, Toaster, NavigationMenu, DatePicker, Calendar 등등',
+        images: [
+          {
+            url: '/assets/images/project/design1.webp',
+            thumbnail: true,
+          },
+          {
+            url: '/assets/images/project/design2.webp',
+          },
+          {
+            url: '/assets/images/project/design3.webp',
+          },
+          {
+            url: '/assets/images/project/design4.webp',
+          },
+          {
+            url: '/assets/images/project/design5.webp',
+          },
+        ],
+      },
+      {
         title: '발전소 모니터링 웹 개발',
         period: '2022.11 - 2024.06',
         company: '원프레딕트',
