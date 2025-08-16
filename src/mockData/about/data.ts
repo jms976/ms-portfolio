@@ -105,6 +105,11 @@ export const AboutData = [
     ],
     career: [
       {
+        company: '제이슨시스템',
+        role: 'Frontend Developer',
+        period: '2024.09 ~ 2025',
+      },
+      {
         company: '원프레딕트',
         role: 'Frontend Developer',
         period: '2022.11 ~ 2024.07',
