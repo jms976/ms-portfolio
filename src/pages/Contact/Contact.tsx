@@ -1,12 +1,5 @@
 import { Paper, Typography, List, ListItem, ListItemIcon, ListItemText, useTheme, Box } from '@mui/material';
-import {
-  ContactPage,
-  DesignServices,
-  DesignServicesSharp,
-  LocationOn,
-  MailOutline,
-  PhoneIphone,
-} from '@mui/icons-material';
+import { ContactPage, DesignServicesSharp, LocationOn, MailOutline, PhoneIphone } from '@mui/icons-material';
 
 import styles from './Contact.module.css';
 import { useOutletContext } from 'react-router-dom';
