@@ -1,5 +1,12 @@
 import { Paper, Typography, List, ListItem, ListItemIcon, ListItemText, useTheme, Box } from '@mui/material';
-import { ContactPage, LocationOn, MailOutline, PhoneIphone } from '@mui/icons-material';
+import {
+  ContactPage,
+  DesignServices,
+  DesignServicesSharp,
+  LocationOn,
+  MailOutline,
+  PhoneIphone,
+} from '@mui/icons-material';
 
 import styles from './Contact.module.css';
 import { useOutletContext } from 'react-router-dom';
@@ -83,6 +90,22 @@ const Contact = () => {
             <ListItemText
               primary="Resume"
               secondary={`${data?.resumeName ?? '-'}.pdf`}
+              primaryTypographyProps={{ color: 'color.iconText', fontSize: '20px' }}
+              secondaryTypographyProps={{ color: 'color.icon', fontSize: '16px' }}
+            />
+          </ListItem>
+          <ListItem
+            className={`${theme.palette.mode === 'dark' ? styles.contactDarkItem : styles.contactLightItem}`}
+            component="a"
+            href={data?.designSystem}
+            target="_blank"
+          >
+            <ListItemIcon sx={{ marginBottom: '18px', marginRight: '-10px', color: 'color.icon' }}>
+              <DesignServicesSharp fontSize="large" />
+            </ListItemIcon>
+            <ListItemText
+              primary="Design System"
+              secondary={data?.designSystem ?? '-'}
               primaryTypographyProps={{ color: 'color.iconText', fontSize: '20px' }}
               secondaryTypographyProps={{ color: 'color.icon', fontSize: '16px' }}
             />

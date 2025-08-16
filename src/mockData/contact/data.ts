@@ -6,5 +6,6 @@ export const ContactData = [
     cell: '01033719178',
     resume: '/assets/pdf/resume.pdf',
     resumeName: '이력서_장명수(FE developer)',
+    designSystem: 'https://ms-design.netlify.app',
   },
 ];
