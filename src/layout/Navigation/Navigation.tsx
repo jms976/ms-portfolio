@@ -134,7 +134,7 @@ const Navigation = () => {
           </Toolbar>
           <Divider />
           <List className={styles.navList}>
-            {routeList({}).map(({ id, path }) => (
+            {routeList({ isIndex: true }).map(({ id, path }) => (
               <ListItem key={id} disablePadding>
                 <ListItemButton
                   component={LinkBehavior}
