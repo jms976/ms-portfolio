@@ -107,7 +107,7 @@ export const AboutData = [
       {
         company: '제이슨시스템',
         role: 'Frontend Developer',
-        period: '2024.09 ~ 2025',
+        period: '2024.09 ~ 2025.10',
       },
       {
         company: '원프레딕트',
