@@ -131,4 +131,21 @@ export const AboutData = [
       },
     ],
   },
+  {
+    id: 2,
+    introduceText: `안녕하세요,저는 농협식품 다니는 장명은 입니다.\n`,
+    skills: [
+      {
+        name: '관능',
+        imageUrl: '/assets/images/skill/next.webp',
+      },
+    ],
+    career: [
+      {
+        company: '정육각',
+        role: '순번대기 솔루션 필드 엔지니어',
+        period: '2014.12 ~ 2017.09',
+      },
+    ],
+  },
 ];
